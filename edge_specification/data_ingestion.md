@@ -1,4 +1,4 @@
-# Data ingestion
+# Data Ingestion
 
 With the device models and protocol library in the Cloud platform, the
 Edge can be implemented to connect with different kinds of energy
@@ -96,7 +96,7 @@ systems.
 
 **Note:** Including, but not limited to the types listed in the table.
 
-## Data timestamp processing
+## Data Timestamp Processing
 
 Normally, EnOS Edge will add a timestamp to each data tags when
 receiving it, and the edge server time will be used as this timestamp.
@@ -112,7 +112,7 @@ processing rules are as follow:
 
 - The original OEM device timestamp will be converted to unified timestamp using UTC+0 time.
 
-## Protocols Supported by EnOS edge
+## Protocols Supported by EnOS Edge
 
 The data ingestion capability of an edge mainly depends on how many
 communication protocols it supports. The protocol library of EnOS Edge

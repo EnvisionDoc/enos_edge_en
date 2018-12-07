@@ -1,4 +1,4 @@
-# Communication debugging
+# Communication Debugging
 
 EnOS Edge supports remote communication debugging of devices with the centralized Remote Configuration Center. It is a web based communication debugging module, providing a series of debugging operations to fulfill different scenario requests of device connection, including:
 

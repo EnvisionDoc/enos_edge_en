@@ -18,7 +18,7 @@ The following figure shows the main page of the **Access Center**. The sites of 
 
 *Figure: Main page of Access Center*
 
-## Adding edge
+## Adding Edge
 
 Device connect to the EnOS Cloud through the edge. The edge can be a
 physical server deployed on the site or a virtual server in the cloud.
@@ -47,7 +47,7 @@ and how many devices can be connected to each edge. The conclusion
 should be based on the number of the sites and sampling frequency
 provided by the user.
 
-## Adding connection
+## Adding Connection
 
 To add connection to the edge, do the following steps:
 
@@ -69,9 +69,9 @@ server or device. Edge is connect to a network gateway and then connect to end s
 **Note:** According to the actual needs, several connections can be
 added under one edge according to the type of the protocol and the type of the edge.
 
-## Adding and managing device information
+## Adding and Managing Device Information
 
-### Adding devices
+### Adding Devices
 
 To add devices, do the following steps:
 
@@ -93,7 +93,7 @@ To add devices, do the following steps:
 
    *Figure: Adding devices and connection template*
 
-### Modifying the information of the devices
+### Modifying the Information of the Devices
 
 If the device information need to be update, do:
 
@@ -112,7 +112,7 @@ If the device information need to be update, do:
 
 3. Click **Import** to import Device template table.
 
-### Deleting the device
+### Deleting the Device
 
 - To delete a devcie, do: Click ![](media/image017.png) of the device to be deleted.
 
@@ -122,12 +122,12 @@ If the device information need to be update, do:
 
   *Figure: Delete devices in batch*
 
-## Configuring logical address or offset
+## Configuring Logical Address or Offset
 
 Because multiple devices are associated to one connection, the logical address and corresponding offset should be configured for each device.
 The configuration of each device depends on the adopted communication protocol and its settings. You can configure you device one by one or in batches by update the **Device template table**.
 
-### Configuring device one by one
+### Configuring Device One by One
 
 To configure the device one by one, do the following steps:
 
@@ -142,7 +142,7 @@ To configure the device one by one, do the following steps:
    ![](media/image021.png)
    *Figure: Edit the logical Address and offset for a device*
 
-### Configuring devices in batches
+### Configuring Devices in Batches
 
 To configure devices in batches, do the following steps:
 
@@ -158,7 +158,7 @@ To configure devices in batches, do the following steps:
 
 **Note:** The exported table supports the configuration of **AI, DI, PI, AO, DO, PO** offset. The basic configuration method is use dashline(-) to connect, e.g 0-50. Multiple values are separate the value by semicolon(;) e.g.0-50;1000-1000.
 
-## Publishing configuration
+## Publishing Configuration
 
 To publish the configuration to the edge, do the following steps.
 
@@ -170,7 +170,7 @@ To publish the configuration to the edge, do the following steps.
 
    *Figure: Publish Configuration to Edge*
 
-## Testing communication
+## Testing Communication
 
 After completing theconfiguration and publishing configuration to the edge, you need to inspect whether the configuration works or not. To test the communication, do the following steps:
 
@@ -240,7 +240,7 @@ In this tab, you can view all device under this link, filter the device and view
 
 *Figure: Data Tab*
 
-#### Setting number
+#### Setting Number
 
 Support to set numbers for the telemetry and telecommand points.
 
@@ -287,7 +287,7 @@ including:
 
 *Figure: Console Function*
 
-### Testing the communication of single device
+### Testing the Communication of Single Device
 
 In the access center, click **View Data** for a single device to perform communication test and view the data of the edge to which the device is connected.
 

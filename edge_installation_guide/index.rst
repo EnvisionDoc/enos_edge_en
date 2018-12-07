@@ -1,4 +1,4 @@
-Edge installation guide
+Edge Installation Guide
 ==========================
 
 .. rubric:: Prerequisites

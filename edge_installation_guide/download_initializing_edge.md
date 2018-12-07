@@ -1,6 +1,6 @@
-# Downloading edge configuration file and initializing edge image
+# Downloading Edge Configuration File and Initializing Edge Image
 
-## Creating a script to download the edge configuration file
+## Creating a Script to Download the Edge Configuration File
 
 *Table: EnOS Edge Registration Environment:Create a script for downloading the edge configuration file box.env*
 
@@ -65,7 +65,7 @@
   </tr>
 </table>
 
-## Running Script to download the Edge Configuration File
+## Running Script to Download the Edge Configuration File
 
 *Table: Run the script to download the edge file "box.env"*
 
@@ -82,7 +82,7 @@
 
 After the download is completed, open the box.env file and get the parameters that used in the next step.
 
-## Installing the edge image and initialize the parameters
+## Installing the Edge Image and Initialize the Parameters
 
 *Table: Install the edge image and initialize the parameters*
 
@@ -97,7 +97,7 @@ After the download is completed, open the box.env file and get the parameters th
   </tr>
 </table>
 
-## Verifying the installation
+## Verifying the Installation
 
 Run the following commands to verify whether the service can be start normally. "docker service run normally" indicates that the installation is successful and you can proceed to the next step.
 

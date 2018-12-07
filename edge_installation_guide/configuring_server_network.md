@@ -1,4 +1,4 @@
-# Configuring server network
+# Configuring Server Network
 
 To configure the networking for the server, run the following commands:
 

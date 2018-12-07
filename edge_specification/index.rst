@@ -1,4 +1,4 @@
-Edge specifications
+Edge Specifications
 ====================
 
 As the data acquisition front-end module of EnOS IoT platform, the main

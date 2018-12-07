@@ -1,4 +1,4 @@
-# Device control
+# Device Control
 
 EnOS Edge supports device control by receiving control commands from the applications in the cloud, converting them to protocol commands, and sending the commands to devices.
 

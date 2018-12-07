@@ -1,4 +1,4 @@
-# Edge security
+# Edge Security
 
 - Bi-directional identity authentication mechanism can be enforced to ensure that the cloud and the edge must be mutually authorized to establish connection between each other.
 

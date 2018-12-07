@@ -1,6 +1,15 @@
 Web Configuration Center User Guide
 ====================================
 
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+
+  Logging on to Web Configuration <https://docs.envisioniot.com/docs/enos-edge/en/latest/web_configuration_center_user_guide/index.html>
+  configuring_edge_connection
+  managing_device_templates
+
+
 .. rubric:: Logging on to Web Configuration Center
 
 To log in to the Web configuration center:
@@ -24,10 +33,3 @@ To log in to the Web configuration center:
      - http://10.21.18.226:8080/eostoolset/addbox/index.html
    * - China Azure
      - http://10.24.8.39:8080/eostoolset/addbox/index.html
-
-
-.. toctree::
-   :maxdepth: 1
-
-   configuring_edge_connection
-   managing_device_templates

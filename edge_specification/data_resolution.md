@@ -1,4 +1,4 @@
-# Data resolution
+# Data Resolution
 
 The resolution of data ingested via the EnOS Edge is determined by the
 following frequency data:

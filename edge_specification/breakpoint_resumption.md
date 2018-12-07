@@ -1,4 +1,4 @@
-# Breakpoint resumption
+# Breakpoint Resumption
 
 EnOS Edge supports breakpoint data transfer resumption. When the internet connection between the on-site edge and the cloud breaks down, the Edge continues to ingest device data and stores data locally. When the connection recovers, it resumes transferring the historical data to the cloud.
 

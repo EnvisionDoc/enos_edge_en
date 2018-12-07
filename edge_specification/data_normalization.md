@@ -1,4 +1,4 @@
-# Data normalization
+# Data Normalization
 
 After data ingestion, another core function of the EnOS Edge is to
 normalize the raw data using the device model downloaded from the cloud.

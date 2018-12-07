@@ -1,4 +1,4 @@
-# EnOS Edge overview
+# EnOS Edge Overview
 
 Envision EnOS™ Edge is the data ingestion front end of the EnOS IoT Platform. It is used to ingest data from on-site devices or 3rd party systems and transfer data to the EnOS Cloud.
 
