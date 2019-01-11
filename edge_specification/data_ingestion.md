@@ -17,84 +17,61 @@ Besides, with the data processing capability of its front-end module,
 the Edge also supports data ingestion transferred from third party
 systems.
 
-**Note:** The data ingestion supported by Edge is real-time data only.
+.. note:: The data ingestion supported by Edge is real-time data only.
 
-*Table: Device Types Supported by EnOS Edge*
+.. list-table:: Device Types Supported by EnOS Edge
+   :widths: 25 25 50
 
+   * - Domain
+     - Device Type
+     - Remarks
+   * - Solar Power
+     - Inverter
+     - Device
+   * - Combiner Box
+     - Device
+     - /
+   * - Meteorological Station
+     - Device
+     - /
+   * - Electric Energy Meter
+     - Device
+     - /
+   * - Centralized Plant Monitoring System
+     - Third Party System
+     - /
+   * - Substation Integrated Automatic System
+     - Device
+     - /
+   * - Wind Power
+     - Wind Turbine
+     - Device
+   * - Box Transformer Substation
+     - Device
+     - /
+   * - Anemometer Tower
+     - Device
+     - /
+   * - Substation Integrated Automatic System
+     - Third Party System
+     - /
+   * - Industrial parks / Commercial Buildings
+     - Electric Energy Meter
+     - Device
+   * - Charging Pile
+     - Device
+     - /
+   * - Power Distribution Management System
+     - Third Party System
+     - /
+   * - Battery PCS
+     - Device
+     - /
+   * - Traditional Electric Power (Thermal power, Hydropower, Gas power, etc.)
+     - DCS, Substation Integrated Automatic System, etc
+     - Third Party System
 
-<table>
-  <tr>
-    <td>Domain</td>
-    <td>Device Type</td>
-    <td>Remarks</td>
-  </tr>
-  <tr>
-    <td>Solar Power</td>
-    <td>Inverter</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Combiner Box</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Meteorological   Station</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Electric   Energy Meter</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Centralized   Plant Monitoring System</td>
-    <td>Third Party   System</td>
-  </tr>
-  <tr>
-    <td>Substation Integrated   Automatic System</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Wind Power</td>
-    <td>Wind Turbine</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Box   Transformer Substation</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Anemometer   Tower</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Substation Integrated   Automatic System</td>
-    <td>Third Party   System</td>
-  </tr>
-  <tr>
-    <td>Industrial   parks / Commercial Buildings</td>
-    <td>Electric   Energy Meter</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Charging Pile</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Power Distribution   Management System</td>
-    <td>Third Party   System</td>
-  </tr>
-  <tr>
-    <td>Battery PCS</td>
-    <td>Device</td>
-  </tr>
-  <tr>
-    <td>Traditional   Electric Power (Thermal power, Hydropower, Gas power, etc.)</td>
-    <td>DCS, Substation   Integrated Automatic System, etc</td>
-    <td>Third Party   System</td>
-  </tr>
-</table>
-
-**Note:** Including, but not limited to the types listed in the table.
+.. note:: Including, but not limited to the types listed in the table.
 
 ## Data Timestamp Processing
 
@@ -120,156 +97,95 @@ accumulated a large number of industrial standard communication
 protocols and a rich private protocol library used for specific devices.
 The following tables list the protocols that EnOS Edge supports.
 
-*Table: Industrial standard protocols that EnOS Edge supports*
+.. list-table:: Industrial standard protocols that EnOS Edge supports
+   :widths: 20 20 20 40
 
+   * - Protocol
+     - Data Type
+     - Communication Type
+     - Network
+   * - ModbusTCP
+     - Bit/Short/Ushort/Int/Uint/Float
+     - Client/Server
+     - Ethernet
+   * - ModbusRTU
+     - <td">Bit/Short/Ushort/Int/Uint/Float
+     - Master
+     - Need to be converted to Ethernet
+   * - IEC60870-5-104
+     - Int/Float
+     - Client/Server
+     - Ethernet
+   * - DNP3.0
+     - Int/Float
+     - Client
+     - Ethernet
+   * - OPC-DA
+     - Uint/Double/Float/Int/Long/Char/Ushort/Short/Bool
+     - Client
+     - Ethernet
+   * - OPC-XML-DA
+     - Uint/Double/Float/Int/Long/Char/Ushort/Short/Bool
+     - Client
+     - Ethernet
+   * - OPC-UA
+     - Uint/Double/Float/Int/Long/Char/Ushort/Short/Bool
+     - Client
+     - Ethernet
+   * - HTTP(s)
+     - Int/Float
+     - Web Service
+     - Ethernet
+   * - DL/T645-1997
+     - Int
+     - Master
+     - Need to be converted to Ethernet
+   * - DL/T645-2007
+     - Int
+     - Master
+     - Need to be converted to Ethernet
 
-<table>
-  <tr>
-    <td>Protocol</td>
-    <td>Data Type</td>
-    <td>Communication Type</td>
-    <td>Network</td>
-  </tr>
-  <tr>
-    <td>ModbusTCP</td>
-    <td>Bit/Short/Ushort/Int/Uint/Float</td>
-    <td>Client/Server</td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>ModbusRTU</td>
-    <td">Bit/Short/Ushort/Int/Uint/Float</td>
-    <td>Master</td>
-    <td>Need to be converted to   Ethernet</td>
-  </tr>
-  <tr>
-    <td>IEC60870-5-104</td>
-    <td>Int/Float</td>
-    <td>Client/Server</td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>DNP3.0</td>
-    <td>Int/Float</td>
-    <td>Client</td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>OPC-DA</td>
-    <td>Uint/Double/Float/Int/Long/Char/Ushort/Short/Bool</td>
-    <td>Client </td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>OPC-XML-DA</td>
-    <td>Uint/Double/Float/Int/Long/Char/Ushort/Short/Bool</td>
-    <td>Client</td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>OPC-UA</td>
-    <td>Uint/Double/Float/Int/Long/Char/Ushort/Short/Bool</td>
-    <td>Client</td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>HTTP(s)</td>
-    <td>Int/Float</td>
-    <td>Web Service</td>
-    <td>Ethernet</td>
-  </tr>
-  <tr>
-    <td>DL/T645-1997</td>
-    <td>Int</td>
-    <td>Master</td>
-    <td>Need to be converted to   Ethernet</td>
-  </tr>
-  <tr>
-    <td>DL/T645-2007</td>
-    <td>Int</td>
-    <td>Master</td>
-    <td>Need to be converted to   Ethernet</td>
-  </tr>
-</table>
+.. list-table:: Devices with private protocols that EnOS Edge supports
+   :widths:: auto
 
-*Table: Devices with private protocols that EnOS Edge supports*
+   * - Manufacturer
+     - Devices
+   * - Growatt
+     - Growatt
+   * - Goodwe
+     - GoodweTcp
+   * - GoodweWebService
+     - /
+   * - Jinlang
+     - JinlangTCP
+   * - KSTAR(ksg)
+     - KSTAR(ksg)
+   * - Lekong
+     - Lekong
+   * - Omnik
+     - Omnik
+   * - TaiDa
+     - TaiDa
+   * - Taoke
+     - Taoke
+   * - SunGrow
+     - SunGrow
+   * - Apsystems
+     - Apsystems
+   * - YunKong
+     - YunKong
+   * - Trannergy
+     - Trannergy
+   * - Trinasolar
+     - /
+   * - Solarman
+     - Solarman
+   * - Aifu
+     - Aifu
+   * - Dingyang
+     - dingyangTcp
+   * - dingyangTcp-jingfuyuan
+   * - SMA
+     - SMA
 
-<table>
-  <tr>
-    <td>Manufacturer</td>
-    <td>Devices</td>
-  </tr>
-  <tr>
-    <td>Growatt</td>
-    <td>Growatt</td>
-  </tr>
-  <tr>
-    <td>Goodwe</td>
-    <td>GoodweTcp</td>
-  </tr>
-  <tr>
-    <td>GoodweWebService</td>
-  </tr>
-  <tr>
-    <td>Jinlang</td>
-    <td>JinlangTCP</td>
-  </tr>
-  <tr>
-    <td>KSTAR(ksg)</td>
-    <td>KSTAR(ksg)</td>
-  </tr>
-  <tr>
-    <td>Lekong</td>
-    <td>Lekong</td>
-  </tr>
-  <tr>
-    <td>Omnik</td>
-    <td>Omnik</td>
-  </tr>
-  <tr>
-    <td>TaiDa</td>
-    <td>TaiDa</td>
-  </tr>
-  <tr>
-    <td>Taoke</td>
-    <td>Taoke</td>
-  </tr>
-  <tr>
-    <td>SunGrow</td>
-    <td>SunGrow</td>
-  </tr>
-  <tr>
-    <td>Apsystems</td>
-    <td>Apsystems</td>
-  </tr>
-  <tr>
-    <td>YunKong</td>
-    <td>YunKong</td>
-  </tr>
-  <tr>
-    <td>Trannergy</td>
-    <td>Trannergy</td>
-  </tr>
-  <tr>
-    <td>Trinasolar</td>
-  </tr>
-  <tr>
-    <td>Solarman</td>
-    <td>Solarman</td>
-  </tr>
-  <tr>
-    <td>Aifu</td>
-    <td>Aifu</td>
-  </tr>
-  <tr>
-    <td>Dingyang</td>
-    <td>dingyangTcp</td>
-  </tr>
-  <tr>
-    <td>dingyangTcp-jingfuyuan</td>
-  </tr>
-  <tr>
-    <td>SMA</td>
-    <td>SMA</td>
-  </tr>
-</table>
+<!--end-->

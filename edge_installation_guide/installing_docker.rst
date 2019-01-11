@@ -11,7 +11,7 @@ To install Docker, run the following commands
    * - Commands
      - Remarks
    * - yum install docker
-     - **Note**: that is not docker-io but docker
+     - Note: that is not docker-io but docker
    * - systemctl start docker
      - Start docker
    * - systemctl enable docker
@@ -25,11 +25,11 @@ To install Docker, run the following commands
    * - Commands
      - Remarks
    * - mkdir /root/dockerdata/box
-     -
+     - /
    * - mkdir /root/dockerdata/data
-     -
+     - /
    * - mkdir /root/dockerdata/config
-     -
+     - /
    * - vim /etc/hosts
        10.21.3.16 registry.envisioncn.com
      - Add resolution

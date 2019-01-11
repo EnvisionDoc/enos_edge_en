@@ -5,20 +5,20 @@ device template and configuring corresponding communication parameters.
 
 Typical process of configuring edge connection is shown as below:
 
-![](media/edge_connection_config_flow.png)
-
-*Figure: Process of configuring communication*
+.. image:: media/edge_connection_config_flow.png
+   :alt: Figure: Process of configuring communication
+   :width: 550px
 
 After publishing the configuration to the edge end, if there is any
 abnormal data, debug the communcationt to ensure that the data can be correctly sent to the cloud on time.
 
 The following figure shows the main page of the **Access Center**. The sites of the customer end are listed in this page.
 
-![](media/image010.png)
+.. image:: media/image010.png
+   :alt: Figure: Main page of Access Center
+   :width: 800px
 
-*Figure: Main page of Access Center*
-
-## Adding edge
+## Adding Edge
 
 Device connect to the EnOS Cloud through the edge. The edge can be a
 physical server deployed on the site or a virtual server in the cloud.
@@ -35,9 +35,9 @@ To add edge, do:
 
 4.  The following window pops up. Enter the edge name and SN.
 
-![](media/image011.png)
-
-*Figure: Pop-up windows of adding edge*
+.. image:: media/image011.png
+   :alt: Figure: Pop-up windows of adding edge
+   :width: 800px
 
 Generally, one site only needs one edge. And one edge can only be
 connected with limited amount of points. For large-sized site, as it
@@ -47,7 +47,7 @@ and how many devices can be connected to each edge. The conclusion
 should be based on the number of the sites and sampling frequency
 provided by the user.
 
-## Adding connection
+## Adding Connection
 
 To add connection to the edge, do the following steps:
 
@@ -59,90 +59,93 @@ You need to check whether the connection mode is HTTP or TCP/IP. If it is TCP/IP
 
 In the below example, edge is used as TCP/IP customer end. So that the configured connection parameters are the IP address and port number of the server.
 
-**Note**: Generally, the edge is not directly connected to the end
-server or device. Edge is connect to a network gateway and then connect to end server or device. Therefore, you need to know the IP address and port number of the network gateway.
+.. note:: Generally, the edge is not directly connected to the end server or device. Edge is connect to a network gateway and then connect to end server or device. Therefore, you need to know the IP address and port number of the network gateway.
 
-![](media/image012.png)
+.. image:: media/image012.png
+   :alt: Figure: Example of adding connection
+   :width: 800px
 
-*Figure: Example of adding connection*
+.. note:: According to the actual needs, several connections can be added under one edge according to the type of the protocol and the type of the edge.
 
-**Note:** According to the actual needs, several connections can be
-added under one edge according to the type of the protocol and the type of the edge.
+## Adding and Managing Device Information
 
-## Adding and managing device information
-
-### Adding devices
+### Adding Devices
 
 To add devices, do the following steps:
 
 1. Click **Add Device** as below.
 
-   ![](media/image013.png)
-
-   *Figure: Adding device*
+   .. image:: media/image013.png
+      :alt: Figure: Adding device
+      :width: 800px
 
 2. In the pop up window, select the devices of the same type.
 
 3. Select the device template to be connected in the **Connection template config** seciton.
 
-4. Click **Save.**
+4. Click **Save**.
 
-   **Note:** You need to select device first and then select the device template.
+   .. note:: You need to select device first and then select the device template.
 
-   ![](media/image014.png)
+   .. image:: media/image014.png
+      :alt: Figure: Adding devices and connection template
+      :width: 800px
 
-   *Figure: Adding devices and connection template*
-
-### Modifying the information of the devices
+### Modifying the Information of the Devices
 
 If the device information need to be update, do:
 
 1. Click **Export** of the device to be modified to export the **Device
     template table**.
 
-   ![](media/image015.png)
-
-   *Figure: Updating the information of the devices*
+   .. image:: media/image015.png
+      :alt: Figure: Updating the information of the devices
+      :width: 800px
 
 2. Update the information in the table.
 
-   ![](media/image016.png)
-
-   *Figure: Device template table*
+   .. image:: media/image016.png
+      :alt: Figure: Device template table
+      :width: 800px
 
 3. Click **Import** to import Device template table.
 
-### Deleting the device
+### Deleting the Device
 
-- To delete a devcie, do: Click ![](media/image017.png) of the device to be deleted.
+- To delete a devcie, do: Click |017| of the device to be deleted.
+
+  .. |017| image:: media/image017.png
 
 - To delete several device in batch, select the devices to be deleted under the connection and click **Delete** above the table.
 
-  ![](media/image018.png)
+  .. image:: media/image018.png
+     :alt: Figure: Delete devices in batch
+     :width: 800px
 
-  *Figure: Delete devices in batch*
-
-## Configuring logical address or offset
+## Configuring Logical Address or Offset
 
 Because multiple devices are associated to one connection, the logical address and corresponding offset should be configured for each device.
 The configuration of each device depends on the adopted communication protocol and its settings. You can configure you device one by one or in batches by update the **Device template table**.
 
-### Configuring device one by one
+### Configuring Device One by One
 
 To configure the device one by one, do the following steps:
 
-1. Click ![](media/image019.png) icon of the device to be edit as below:
+1. Click |019| icon of the device to be edit as below:
 
-   ![](media/image020.png)
+   .. |019| image:: media/image019.png
 
-   *Figure: Configure the logical address and offset for Device Individually*
+   .. image:: media/image020.png
+      :alt: Figure: Configure the logical address and offset for Device Individually
+      :width: 800px
 
 2. Edit the configuration according to your requirement and then click **OK.**
 
-   ![](media/image021.png)
-   *Figure: Edit the logical Address and offset for a device*
+   .. image:: media/image021.png
+      :alt: Figure: Edit the logical Address and offset for a device
+      :width: 800px
 
-### Configuring devices in batches
+### Configuring Devices in Batches
 
 To configure devices in batches, do the following steps:
 
@@ -152,13 +155,13 @@ To configure devices in batches, do the following steps:
 
 3. Click **Import** to upload the Device template table.
 
-   ![](media/image022.png)
+   .. image:: media/image022.png
+      :alt: Figure: Device template table
+      :width: 800px
 
-   *Figure 4‑13: Device template table*
+.. note:: The exported table supports the configuration of **AI, DI, PI, AO, DO, PO** offset. The basic configuration method is use dashline(-) to connect, e.g 0-50. Multiple values are separate the value by semicolon(;) e.g.0-50;1000-1000.
 
-**Note:** The exported table supports the configuration of **AI, DI, PI, AO, DO, PO** offset. The basic configuration method is use dashline(-) to connect, e.g 0-50. Multiple values are separate the value by semicolon(;) e.g.0-50;1000-1000.
-
-## Publishing configuration
+## Publishing Configuration
 
 To publish the configuration to the edge, do the following steps.
 
@@ -166,11 +169,11 @@ To publish the configuration to the edge, do the following steps.
 
 2. You can check the status of the publish. If the status shows **Success** as below, it means configuration is published and has taken effected.
 
-   ![](media/image023.png)
+   .. image:: media/image023.png
+      :alt: Figure: Publish Configuration to Edge
+      :width: 800px
 
-   *Figure: Publish Configuration to Edge*
-
-## Testing communication
+## Testing Communication
 
 After completing theconfiguration and publishing configuration to the edge, you need to inspect whether the configuration works or not. To test the communication, do the following steps:
 
@@ -180,9 +183,9 @@ After completing theconfiguration and publishing configuration to the edge, you 
 
 3. If the indicator before the device name is red, it means the connection in the transimmion layer(TCP/IP layer) is interrupted.
 
-   ![](media/image023.png)
-
-   *Figure: Communication in the Transmission Layer is Interrupted*
+   .. image:: media/image023.png
+      :alt: Figure: Communication in the Transmission Layer is Interrupted
+      :width: 800px
 
 ## Debugging
 
@@ -202,45 +205,45 @@ To debug the communicaton, do the following steps:
 Click **Test** as shown below and enter the batch test page of the link,
 which is as shown in Figure as below.
 
-![](media/image024.png)
+.. image:: media/image024.png
+   :alt: Figure:  Batch Test Function
+   :width: 800px
 
-*Figure: Batch Test Function*
-
-![](media/image025.png)
-
-*Figure: Batch Communication Test Page*
+.. image:: media/image025.png
+   :alt: Figure: Batch Communication Test Page
+   :width: 800px
 
 The debugging page allows you to perform the following operations:
 
-![](media/image026.png)
-
-*Figure: Overview of Batch Communication Test*
+.. image:: media/image026.png
+   :alt: Figure: Overview of Batch Communication Test
+   :width: 800px
 
 You can switch the link in the below fields and the corresponding
 connection parameters under the fields.
 
-![](media/image027.png)
-
-*Figure: Conversion of Links*
+.. image:: media/image027.png
+   :alt: Figure: Conversion of Links
+   :width: 800px
 
 You can click **Start / Pause**, to start or pause the communication
 test function.
 
 Batch test provides four functions :data, original message, log and console. Click corresponding Tab pages to convert different functions, which is shown in the following figure:
 
-![](media/image028.png)
-
-*Figure: Conversion of Communication Test Functions*
+.. image:: media/image028.png
+   :alt: Figure: Conversion of Communication Test Functions
+   :width: 800px
 
 ### Data
 
 In this tab, you can view all device under this link, filter the device and view the update information of collection point data in the edge.
 
-![](media/image029.png)
+.. image:: media/image029.png
+   :alt: Figure: Data Tab
+   :width: 800px
 
-*Figure: Data Tab*
-
-#### Setting number
+#### Setting Number
 
 Support to set numbers for the telemetry and telecommand points.
 
@@ -248,27 +251,27 @@ Support to set numbers for the telemetry and telecommand points.
 
 2.  Click **Send** to send the set value to the cloud. Click once to send once and it will not interrupt the uploading of the former data, which is equivalent to inserting of a new value to the cloud.
 
-    ![](media/image030.png)
-
-    *Figure: Setting number*
+    .. image:: media/image030.png
+       :alt: Figure: Setting number
+       :width: 800px
 
 ### Datagram
 
 In this tab, you can view the incoming and outgoing messages. The
 messages can be copied.
 
-![](media/image031.png)
-
-*Figure: Datagram tab*
+.. image:: media/image031.png
+   :alt: Figure: Datagram tab
+   :width: 800px
 
 ### Log
 
 In this tab, you can view the warning and error types of logs to
 disgnosis the communication failure. Informational logs are hidden,
 
-![](media/image032.png)
-
-*Figure: Log Function*
+.. image:: media/image032.png
+   :alt: Figure: Log Function
+   :width: 800px
 
 ### Console
 
@@ -283,17 +286,19 @@ including:
 
 - View TCP connection
 
-![](media/image033.png)
+.. image:: media/image033.png
+   :alt: Figure: Console Function
+   :width: 800px
 
-*Figure: Console Function*
-
-### Testing the communication of single device
+### Testing the Communication of Single Device
 
 In the access center, click **View Data** for a single device to perform communication test and view the data of the edge to which the device is connected.
 
 You can also view data for multiple devices. The single device
 connection test is consistent with that of batch test.
 
-![](media/image034.png)
+.. image:: media/image034.png
+   :alt: Figure: Communication Test Function of Single Device
+   :width: 800px
 
-*Figure: Communication Test Function of Single Device*
+<!--end-->

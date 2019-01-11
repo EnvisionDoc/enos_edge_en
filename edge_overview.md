@@ -55,6 +55,8 @@ their business requirements, and then upload the protocols to the developer cent
 
 ## Software Architecture
 
-![](media/image001.png)
+.. image:: media/image001.png
+   :alt: Figure: Edge Software Architecture
+   :width: 5500px
 
-*Figure: Edge Software Architecture*
+<!--end-->

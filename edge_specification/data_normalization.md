@@ -5,9 +5,9 @@ normalize the raw data using the device model downloaded from the cloud.
 Raw data will be mapped to the standard data schema of each device
 instance in the platform.
 
-![](media/image005.png)
-
-*Figure: Data Processing Flow in EnOS Edge*
+.. image:: media/image005.png
+   :alt: Figure: Data Processing Flow in EnOS Edge
+   :width: 550px
 
 As shown in the above figure, the data normalization process includes:
 

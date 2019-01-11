@@ -5,20 +5,16 @@ protocols and device models, device amount, hardware configuration, etc., can af
 
 Therefore, it is difficult to provide an accurate number of domain points supported by the Edge. Based on internal testing results, the following data is provided for reference.
 
-*Table: Amount of supported domain points by EnOS Edge*
+.. list-table:: Amount of supported domain points by EnOS Edge
+
+   * - Hardware Configuration
+     - Data type/mode/sampling cycle level/Percentage
+     - Domain points
+   * - Linux OS / 4 Core CPU / 8G Memory
+     - AI/Timer/10second sampling level-42%
+       AI/Timer/second level -1%
+       DI/Change/../-57%
+     - 20000
 
 
-<table>
-  <tr>
-    <td>Hardware Configuration</td>
-    <td>Data type/mode/sampling   cycle level/Percentage</td>
-    <td>Domain points</td>
-  </tr>
-  <tr>
-    <td>Linux OS / 4 Core CPU /   8G Memory</td>
-    <td>AI/Timer/10second   sampling level-42%<br>
-      AI/Timer/second level -1%<br>
-      DI/Change/../-57%</td>
-    <td>20000</td>
-  </tr>
-</table>
+<!--end-->

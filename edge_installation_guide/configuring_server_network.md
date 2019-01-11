@@ -2,62 +2,36 @@
 
 To configure the networking for the server, run the following commands:
 
-*Table: Step 1. Edit the network configuration file*
+.. list-table:: Step 1. Edit the network configuration file
+   :widths: 35 65
 
-<table>
-  <tr>
-    <td>Commands</td>
-    <td>Remarks</td>
-  </tr>
-  <tr>
-    <td>vim/etc/sysconfig/network-scripts/ifcfg-ens32</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>DEVICE=ens32</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>IPADDR=xxx.xxx.xxx.xxx</td>
-    <td>Use the planned IP address</td>
-  </tr>
-  <tr>
-    <td>NETMASK=255.255.255.0</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>GATEWAY=yyy.yyy.yyy.yyy</td>
-    <td>Use the planned IP gateway</td>
-  </tr>
-  <tr>
-    <td>ONBOOT=yes</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>NAME=ens32</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>DNS1=zzz.zzz.zzz.zzz</td>
-    <td>Use the planned DNS</td>
-  </tr>
-</table>
+   * - Commands
+     - Remarks
+   * - vim/etc/sysconfig/network-scripts/ifcfg-ens32
+     - null
+   * - DEVICE=ens32
+     - null
+   * - IPADDR=xxx.xxx.xxx.xxx
+     - Use the planned IP address
+   * - NETMASK=255.255.255.0
+     - null
+   * - GATEWAY=yyy.yyy.yyy.yyy
+     - Use the planned IP gateway
+   * - ONBOOT=yes
+     - null
+   * - NAME=ens32
+     - null
+   * - DNS1=zzz.zzz.zzz.zzz
+     - Use the planned DNS
 
-*Table: Step 2. Start the ssh service*
+.. list-table:: Step 2. Start the ssh service
+   :widths: 35 65
 
-<table>
-  <tr>
-    <td>Commands</td>
-    <td>Remarks</td>
-  </tr>
-  <tr>
-    <td>systemctl restart sshd</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>systemctl enable sshd</td>
-    <td></td>
-  </tr>
-</table>
+   * - Commands
+     - Remarks
+   * - systemctl restart sshd
+     - null
+   * - systemctl enable sshd
+     - null
 
 You can then acccess and manage the edge server remotely after you complete the above configurations.
