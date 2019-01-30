@@ -95,8 +95,7 @@ To add devices, do the following steps:
 
 If the device information need to be update, do:
 
-1. Click **Export** of the device to be modified to export the **Device
-    template table**.
+1. Click **Export** of the device to be modified to export the **Device template table**.
 
    .. image:: media/image015.png
       :alt: Figure: Updating the information of the devices
@@ -224,7 +223,7 @@ connection parameters under the fields.
 
 .. image:: media/image027.png
    :alt: Figure: Conversion of Links
-   :width: 800px
+   :width: 400px
 
 You can click **Start / Pause**, to start or pause the communication
 test function.
@@ -233,7 +232,7 @@ Batch test provides four functions :data, original message, log and console. Cli
 
 .. image:: media/image028.png
    :alt: Figure: Conversion of Communication Test Functions
-   :width: 800px
+   :width: 400px
 
 ### Data
 

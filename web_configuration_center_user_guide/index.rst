@@ -5,7 +5,7 @@ Web Configuration Center User Guide
   :maxdepth: 1
   :hidden:
 
-  Logging on to Web Configuration <https://docs.envisioniot.com/docs/enos-edge/en/latest/web_configuration_center_user_guide/index.html>
+  Logging on to Web Configuration <https://www.envisioniot.com/docs/enos-edge/en/latest/web_configuration_center_user_guide/index.html>
   configuring_edge_connection
   managing_device_templates
 

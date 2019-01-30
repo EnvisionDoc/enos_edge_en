@@ -174,15 +174,17 @@ acquisition points, do the following steps:
 
 4. After you have successfully uploaded the mapping table, download the domain point list to obtain a table that contains the mapping relations. The table will also contain the description of the aquisition points (because the description can be automatically acquired from the configuration file point.csv).
 
-5. information of the model points and aquisition points can be viewed in the page, which is as shown in the following figure. Click **Save** to complete configuration of the device template.
-
-   .. note:: - Not all model points need to be related to an aquisition point. Perform configuration based on your needs.
-           - The points that need to be mapped through formulas must be configured manually instead of through the import/export operations.
-           - In the exported mapping relation table,the points that are mapped through formulas do not appear in the exported CSV file, but the formula exists in the backstage.
+5. Information of the model points and aquisition points can be viewed in the page, which is as shown in the following figure. Click **Save** to complete configuration of the device template.
 
    .. image:: media/image045.png
       :alt: Figure: Configure Mapping Relation
       :width: 800px
+
+
+.. note:: - Not all model points need to be related to an aquisition point. Perform configuration based on your needs.
+   - The points that need to be mapped through formulas must be configured manually instead of through the import/export operations.
+   - In the exported mapping relation table,the points that are mapped through formulas do not appear in the exported CSV file, but the formula exists in the backstage.
+
 
 ## Creating Device Template by Cloning Existing Template
 

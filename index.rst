@@ -3,13 +3,6 @@
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
-   :caption: Back to
-
-   EnOS™ Fundamental <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
-
-.. toctree::
-   :maxdepth: 1
    :caption: Learn
 
    edge_overview

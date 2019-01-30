@@ -84,8 +84,7 @@ processing rules are as follow:
 
 - The Edge will tag received data with timestamp using UTC+0 time zone.
 
-- The original OEM device timestamp (if available) will be recorded as an attribute of the normalized data tag and sent to the cloud with
-    the data flow.
+- The original OEM device timestamp (if available) will be recorded as an attribute of the normalized data tag and sent to the cloud with the data flow.
 
 - The original OEM device timestamp will be converted to unified timestamp using UTC+0 time.
 
@@ -145,8 +144,10 @@ The following tables list the protocols that EnOS Edge supports.
      - Master
      - Need to be converted to Ethernet
 
+
+
 .. list-table:: Devices with private protocols that EnOS Edge supports
-   :widths:: auto
+   :widths: auto
 
    * - Manufacturer
      - Devices
@@ -155,7 +156,7 @@ The following tables list the protocols that EnOS Edge supports.
    * - Goodwe
      - GoodweTcp
    * - GoodweWebService
-     - /
+     - --
    * - Jinlang
      - JinlangTCP
    * - KSTAR(ksg)
@@ -177,7 +178,7 @@ The following tables list the protocols that EnOS Edge supports.
    * - Trannergy
      - Trannergy
    * - Trinasolar
-     - /
+     - --
    * - Solarman
      - Solarman
    * - Aifu
@@ -185,7 +186,9 @@ The following tables list the protocols that EnOS Edge supports.
    * - Dingyang
      - dingyangTcp
    * - dingyangTcp-jingfuyuan
+     - --
    * - SMA
      - SMA
+
 
 <!--end-->
