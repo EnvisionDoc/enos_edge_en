@@ -8,7 +8,7 @@ Edge connects to EnOS Cloud via the VPN tunnel created from the on-site network 
 
 .. image:: media/image002.png
    :alt: Figure: Deployment model 1
-   :width: 550px
+   
 
 ## Deployment Model 2
 
@@ -16,7 +16,7 @@ The Edge application is deployed in light-weight wireless hardware such as Dell 
 
 .. image:: media/image003.png
    :alt: Figure: Deployment model 2
-   :width: 550px
+   
 
 ## Deployment Model 3
 
@@ -24,6 +24,6 @@ The Edge is deployed with gatekeepers such as Nari Syskeeper. An Edge device is 
 
 .. image:: media/image004.png
    :alt: Figure: Deployment model 3
-   :width: 550px
+   
 
 <!--end-->

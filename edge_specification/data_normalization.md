@@ -7,7 +7,7 @@ instance in the platform.
 
 .. image:: media/image005.png
    :alt: Figure: Data Processing Flow in EnOS Edge
-   :width: 550px
+   
 
 As shown in the above figure, the data normalization process includes:
 

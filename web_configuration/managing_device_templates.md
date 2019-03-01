@@ -13,7 +13,7 @@ Creating of the device template mainly includes three parts:
 
 .. image:: media/image035.png
    :alt: Figure: Process of managing device template
-   :width: 550px
+   
 
 Device template can be created in two ways:
 
@@ -35,7 +35,7 @@ To create a device template from scratch, do the following steps:
 
    .. image:: media/image036.png
       :alt: Figure: New Creation of Device Template
-      :width: 800px
+      
 
 4. Click |add| of the newly adding device.
 
@@ -51,7 +51,7 @@ To create a device template from scratch, do the following steps:
 
    .. image:: media/image038.png
       :alt: Figure: Example of the Device Template Edit Page with Wind turbine information.
-      :width: 800px
+      
 
 ### Providing the Basic Information
 
@@ -65,7 +65,7 @@ Enter in the basic information, select the type and specific protocol.
 
    .. image:: media/image039.png
       :alt: Figure: Edit Basic Information of Template
-      :width: 800px
+      
 
 3. (Optional)Click **Details** to check the details of the protocal.
 
@@ -75,7 +75,7 @@ Enter in the basic information, select the type and specific protocol.
 
    .. image:: media/image041.png
       :alt: Figure: Details page
-      :width: 800px
+      
 
 ### Uploading Point Table
 
@@ -87,7 +87,7 @@ The **Point.csv** file contains the actual aquisition points of the device.
 
    .. image:: media/image042.png
       :alt: Figure: Download Template
-      :width: 800px
+      
 
 2. Open the files locally and modify the parameters.
 
@@ -97,7 +97,7 @@ The **Point.csv** file contains the actual aquisition points of the device.
 
    .. image:: media/image043.png
       :alt: Figure: Upload the template
-      :width: 800px
+      
 
    .. note:: Point.csv Point table must be formatted in UTF-8 BOM, incorrect format might cause problems such as display errors.
 
@@ -116,13 +116,13 @@ acquisition points, do the following steps:
 
    .. image:: media/image045.png
       :alt: Figure: Standard Model Selection and Mapping Relation Configuration
-      :width: 800px
+      
 
 3. In the window that pops out, enter keywords of the data aquisition point in the search bar and locate the point to map to. Click **OK** to complete mapping one point.
 
    .. image:: media/image046.png
       :alt: Figure: Mapping Relation Configuration
-      :width: 800px
+      
 
    For simple direct mapping relation, select the corresponding acquisition point.
 
@@ -130,13 +130,13 @@ acquisition points, do the following steps:
 
    .. image:: media/image047.png
       :alt: Figure: Add Formula Button
-      :width: 550px
+      
 
 4. Add formula (for complicated mapping relation).
 
    .. image:: media/image048.png
       :alt: Figure: Formula Selection
-      :width: 550px
+      
 
    The following is an example of adding the "SUM" formula.
 
@@ -146,7 +146,7 @@ acquisition points, do the following steps:
 
    .. image:: media/image050.png
       :alt: Figure: The description of the formula addition
-      :width: 550px
+      
 
    .. note:: The sequence that the points are added is important for some formulas. For example, the **CROSS\_PRODUCT** fomula, if the sequence that the points are selected is: ai.0, ai4, ai8, ai12, the formula would be \"(ai. 0 \* ai. 4 + ai. 8 \* ai. 12)\".
 
@@ -154,7 +154,7 @@ acquisition points, do the following steps:
 
    .. image:: media/image051.png
       :alt: Figure: Select sequence and operands
-      :width: 550px
+      
 
 #### Configuring Mapping Relation in Batches
 
@@ -162,11 +162,11 @@ acquisition points, do the following steps:
 
    .. image:: media/image052.png
       :alt: Figure: Configure Mapping Relation in Batches
-      :width: 800px
+      
 
    .. image:: media/image053.png
       :alt: Figure: Mapping Relation Table
-      :width: 800px
+      
 
 2. In the table, enter the name of the data acquisition point to map to for each model point. The mdesp column refers to the description of the acquisition point, which can be left empty.
 
@@ -178,7 +178,7 @@ acquisition points, do the following steps:
 
    .. image:: media/image045.png
       :alt: Figure: Configure Mapping Relation
-      :width: 800px
+      
 
 
 .. note:: - Not all model points need to be related to an aquisition point. Perform configuration based on your needs.
@@ -202,18 +202,18 @@ To create a device template by cloning an existing template:
 
 .. image:: media/image054.png
    :alt: Figure: Copy Device Template
-   :width: 800px
+   
 
 .. image:: media/image055.png
    :alt: Figure: Enter the Template Name
-   :width: 400px
+   
 
 ## Modifying Device Template
 
 From the **Template Lib** page, click the edit icon to enter the device template detail page as shown in the following figure.
 
 .. image:: media/image056.png
-   :width: 800px
+   
 
 As the same device template might be shared by devices from different sites of a client, the modification to the device template can affect several sites. If only part of the sites want adopt the modified device tempate while the other sites want to retain the original device template, a mechanism is needed to support the scenairo. The mechanism is described as follows:
 
@@ -228,7 +228,7 @@ In the **Template Lib**. page, click |057| (the associate icon) to open a dialog
 
 .. image:: media/image058.png
    :alt: Figure: View the Associated Sites
-   :width: 800px
+   
 
 After you modify the template, click **Save** and you'll be prompted to
 select which sites to apply the change to.
@@ -239,7 +239,7 @@ select which sites to apply the change to.
 
 .. image:: media/image059.png
    :alt: Figure: Select the Sites to Be Affected
-   :width: 800px
+   
 
 .. |049| image:: media/image049.png
 

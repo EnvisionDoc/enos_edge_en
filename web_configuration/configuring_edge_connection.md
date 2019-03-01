@@ -7,7 +7,7 @@ Typical process of configuring edge connection is shown as below:
 
 .. image:: media/edge_connection_config_flow.png
    :alt: Figure: Process of configuring communication
-   :width: 550px
+   
 
 After publishing the configuration to the edge end, if there is any
 abnormal data, debug the communcationt to ensure that the data can be correctly sent to the cloud on time.
@@ -16,7 +16,7 @@ The following figure shows the main page of the **Access Center**. The sites of 
 
 .. image:: media/image010.png
    :alt: Figure: Main page of Access Center
-   :width: 800px
+   
 
 ## Adding Edge
 
@@ -37,7 +37,7 @@ To add edge, do:
 
 .. image:: media/image011.png
    :alt: Figure: Pop-up windows of adding edge
-   :width: 800px
+   
 
 Generally, one site only needs one edge. And one edge can only be
 connected with limited amount of points. For large-sized site, as it
@@ -63,7 +63,7 @@ In the below example, edge is used as TCP/IP customer end. So that the configure
 
 .. image:: media/image012.png
    :alt: Figure: Example of adding connection
-   :width: 800px
+   
 
 .. note:: According to the actual needs, several connections can be added under one edge according to the type of the protocol and the type of the edge.
 
@@ -77,7 +77,7 @@ To add devices, do the following steps:
 
    .. image:: media/image013.png
       :alt: Figure: Adding device
-      :width: 800px
+      
 
 2. In the pop up window, select the devices of the same type.
 
@@ -89,7 +89,7 @@ To add devices, do the following steps:
 
    .. image:: media/image014.png
       :alt: Figure: Adding devices and connection template
-      :width: 800px
+      
 
 ### Modifying the Information of the Devices
 
@@ -99,13 +99,13 @@ If the device information need to be update, do:
 
    .. image:: media/image015.png
       :alt: Figure: Updating the information of the devices
-      :width: 800px
+      
 
 2. Update the information in the table.
 
    .. image:: media/image016.png
       :alt: Figure: Device template table
-      :width: 800px
+      
 
 3. Click **Import** to import Device template table.
 
@@ -119,7 +119,7 @@ If the device information need to be update, do:
 
   .. image:: media/image018.png
      :alt: Figure: Delete devices in batch
-     :width: 800px
+     
 
 ## Configuring Logical Address or Offset
 
@@ -136,13 +136,13 @@ To configure the device one by one, do the following steps:
 
    .. image:: media/image020.png
       :alt: Figure: Configure the logical address and offset for Device Individually
-      :width: 800px
+      
 
 2. Edit the configuration according to your requirement and then click **OK.**
 
    .. image:: media/image021.png
       :alt: Figure: Edit the logical Address and offset for a device
-      :width: 800px
+      
 
 ### Configuring Devices in Batches
 
@@ -156,7 +156,7 @@ To configure devices in batches, do the following steps:
 
    .. image:: media/image022.png
       :alt: Figure: Device template table
-      :width: 800px
+      
 
 .. note:: The exported table supports the configuration of **AI, DI, PI, AO, DO, PO** offset. The basic configuration method is use dashline(-) to connect, e.g 0-50. Multiple values are separate the value by semicolon(;) e.g.0-50;1000-1000.
 
@@ -170,7 +170,7 @@ To publish the configuration to the edge, do the following steps.
 
    .. image:: media/image023.png
       :alt: Figure: Publish Configuration to Edge
-      :width: 800px
+      
 
 ## Testing Communication
 
@@ -184,7 +184,7 @@ After completing theconfiguration and publishing configuration to the edge, you 
 
    .. image:: media/image023.png
       :alt: Figure: Communication in the Transmission Layer is Interrupted
-      :width: 800px
+      
 
 ## Debugging
 
@@ -206,24 +206,24 @@ which is as shown in Figure as below.
 
 .. image:: media/image024.png
    :alt: Figure:  Batch Test Function
-   :width: 800px
+   
 
 .. image:: media/image025.png
    :alt: Figure: Batch Communication Test Page
-   :width: 800px
+   
 
 The debugging page allows you to perform the following operations:
 
 .. image:: media/image026.png
    :alt: Figure: Overview of Batch Communication Test
-   :width: 800px
+   
 
 You can switch the link in the below fields and the corresponding
 connection parameters under the fields.
 
 .. image:: media/image027.png
    :alt: Figure: Conversion of Links
-   :width: 400px
+   
 
 You can click **Start / Pause**, to start or pause the communication
 test function.
@@ -232,7 +232,7 @@ Batch test provides four functions :data, original message, log and console. Cli
 
 .. image:: media/image028.png
    :alt: Figure: Conversion of Communication Test Functions
-   :width: 400px
+   
 
 ### Data
 
@@ -240,7 +240,7 @@ In this tab, you can view all device under this link, filter the device and view
 
 .. image:: media/image029.png
    :alt: Figure: Data Tab
-   :width: 800px
+   
 
 #### Setting Number
 
@@ -252,7 +252,7 @@ Support to set numbers for the telemetry and telecommand points.
 
     .. image:: media/image030.png
        :alt: Figure: Setting number
-       :width: 800px
+       
 
 ### Datagram
 
@@ -261,7 +261,7 @@ messages can be copied.
 
 .. image:: media/image031.png
    :alt: Figure: Datagram tab
-   :width: 800px
+   
 
 ### Log
 
@@ -270,7 +270,7 @@ disgnosis the communication failure. Informational logs are hidden,
 
 .. image:: media/image032.png
    :alt: Figure: Log Function
-   :width: 800px
+   
 
 ### Console
 
@@ -287,7 +287,7 @@ including:
 
 .. image:: media/image033.png
    :alt: Figure: Console Function
-   :width: 800px
+   
 
 ### Testing the Communication of Single Device
 
@@ -298,6 +298,6 @@ connection test is consistent with that of batch test.
 
 .. image:: media/image034.png
    :alt: Figure: Communication Test Function of Single Device
-   :width: 800px
+   
 
 <!--end-->
