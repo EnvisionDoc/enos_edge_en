@@ -7,3 +7,4 @@ Appendix
    recommended_hardware
    dell_3002
    dell_5000
+   protocol_list
