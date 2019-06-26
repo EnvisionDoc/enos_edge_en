@@ -1,61 +1,65 @@
-# EnOS Edge Overview
+# EnOS™ Edge Overview
 
-Envision EnOS™ Edge is the data ingestion front end of the EnOS IoT Platform. It is used to ingest data from on-site devices or 3rd party systems and transfer data to the EnOS Cloud.
+Note: This article is in the progress of translation. Thanks for your visit!
 
-EnOS Edge is a software application. It supports data ingestion, local
-storage, and breakpoint resumption. The Edge software can be installed
-in various hardware to meet different project requirements about
-performance, costs, security, brand and so on.
+EnOS™ Edge是EnOS Cloud的数据采集前置，用于从物联网边缘采集现场设备数据，或对接第三方系统以获取、分析数据，并将数据转发到EnOS™云端供用户使用。
 
-## Functional Characteristics
+EnOS™ Edge本身是一套软件栈，通过将部分计算移至边缘端，显著减少云端的计算负载，并且可以对设备的控制提供更低延迟的响应。
 
-As the data acquisition front end of EnOS IoT platform, EnOS Edge is
-featured with the follow functional characteristics:
+EnOS Edge的软件架构如下图所示：
 
-**Fast device connection**
+.. image:: media/edge_software_architecture.png
+   :alt: 图：Edge软件架构图
 
-- With the device model library and optimized configuration process provided by EnOS IoT platform, users can configure device connection in a short time.
 
-- With the Web Configuration Center, device accessing, communication testing, data verification and maintenance can be done remotely and easily.
+## 功能特性
 
-**Device control**
+EnOS™ Edge作为远景EnOS™ IoT平台的数据采集前置，具备设备快速接入，设备控制，数据自动同步云端，断点续传，远程集中管理，开放、丰富的规约库等特点。
 
-After the device model was defined with control functionalities and control data tags in the EnOS Cloud, the Edge supports receiving control commands from the cloud and sends to the device.
+### 快速及可扩展的设备接入
 
-**Automatic synchronization with the cloud**
+- 基于内置的规约库及设备模板库，及对接入过程的优化处理，用户可以实现快速以多种协议接入相应的设备。
 
-As the functionality extension of the EnOS Cloud, EnOS Edge runs as an individual application and works with the cloud compatibly as well.
-Under the condition of smooth network and the necessary open ports, Edge
-can:
+  EnOS™ Edge不仅具有丰富的规约库，支持当前电力行业绝大多数设备接入场景。同时还结合远景开发者平台，提供开放的规约开发能力，开发者用户可以根据自身需求，自行开发规约并上传到开发者平台，然后发布到Edge中使用。
 
-- Synchronize device telemetry to the cloud automatically.
+- 基于Web页面的调试远程调试页面，实现用户远程便捷调试操作；
 
-- Update device models in the cloud automatically (or manually).
+### 设备控制
 
-- Download resource packages from the cloud automatically, including configuration files, communication files, etc.
+与云端创建的设备模型相匹配，支持云端下发控制指令到具体设备。
 
-**Breakpoint resumption**
+详细信息，参考[设备控制](learn/edge_specification/device_control)
 
-- In case of network interruption between the Edge and cloud, the Edge can cache data automatically during the interruption and resume data upload starting from the breakpoint when the connection recovers. The sequence of data uploading is from old to new data.
+### 云端自动同步
 
-- The data cache capability of the Edge depends on the hardware configuration. For details about the calculation method, refer to the documentation in [Breakpoint resumption](edge_specification/breakpoint_resumption).
+EnOS™ Edge作为云端功能的延伸，通过与云端深度集成，在保证Edge与云端网络畅通及对应的端口正常工作的情况下，可以实现：
 
-**Centralized remote control**
+- 设备数据自动同步到云端；
 
-- The web-based Configuration Center supports remote communication configuration, data debugging, and device connection.
+- 自动（或手动）更新云端的模型变更；
 
-- In condition of smooth network connection and open ports, the Edge supports remote application upgrade, configuration parameter modification, etc.
+- 自动下载云端的接入，通讯调试等配置；
 
-- The cloud monitors real-time performance of each edge and the connected devices, and provides APIs for third party application development.
+### 边缘计算
 
-**Open and rich protocol library**
+- 在Edge本地提供边缘计算能力，支持对接入测点进行常用公式处理，用户在云端自定义计算脚本并下发；
+  
+- Edge中累计了常用的边缘计算的函数算子，同时支持对算子进行扩展；
 
-EnOS Edge provides a rich protocol library, which supports connection of almost all the devices currently used by the power industry. Meanwhile, it provides developers on EnOS Developer Center with open protocol development capabilities. Developers can develop protocols based on
-their business requirements, and then upload the protocols to the developer center and synchronize them to the Edge.
+参见[边缘计算](learn/edge_specification/edge_computing)
 
-## Software Architecture
+### 断点续传
 
-.. image:: media/image001.png
-   :alt: Figure: Edge Software Architecture
+当Edge与云端网络通讯中断后，能够自动缓存通讯中断时间段内的数据，通讯恢复后，按照从旧到新的时序顺序自动补传到云端，实现断点续传功能。通讯中断后，数据的缓存的能力取决于采用的设备的硬件配置。
+
+参见[断点续传](learn/breakpoint_resumption)
+
+### 远程集中管理
+
+- 提供基于Web GUI的集中配置中心，实现远程通讯配置，数据调试，设备接入；
+
+- 在保证相应网络和端口畅通的前提下，可以实现远程升级，修改配置参数等操作；
+
+- 云端实时监控每一个Edge及其接入的设备的状态，同时提供接口供第三方应用调用；
 
 <!--end-->

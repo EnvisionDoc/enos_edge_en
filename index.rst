@@ -3,30 +3,44 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: Learn
+   :caption: Overview
 
    edge_overview
-   typical_deployment_model
-   edge_specification/index
-   edge_security
+   concepts
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Learn
+   
+   learn/typical_deployment_model
+   learn/edge_security
+   learn/data_ingestion_normalization
+   learn/edge_computing
+   learn/breakpoint_resumption
+   learn/device_control
+   learn/communication
+   learn/data_resolution
+   learn/capacity
+   learn/protocol_development
 
 .. toctree::
    :maxdepth: 2
-   :caption: Installation
-
-   edge_installation_guide/index
+   :caption: Get Started
 
 .. toctree::
    :maxdepth: 2
-   :caption: Configuration
+   :caption: How-to's
 
-   web_configuration/index
+   howto/edge_installation_guide/index
+   howto/console_configuration/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth:: 2
    :caption: Reference
-
-   appendix/index
+   
+   reference/protocol_list
+   reference/recommended_hardware
+   reference/mapping_formula
 
 Downloads
 """"""""
