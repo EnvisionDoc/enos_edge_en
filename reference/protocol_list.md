@@ -1,44 +1,42 @@
 # Protocol list for EnOS Edge
 
-Note: This article is in the progress of translation. Thanks for your visit!
-
 - ADS
-- 艾伏逆变器InverterServer通讯
+- Afore Inverter Server
 - ApsProtoco
 - APsystemsProtocol
-- BACnet集控
-- 标准DLT645-1997
-- 标准DLT645-2007
-- 标准IEC104
-- 标准MODBUS RTU
-- 标准MODBUS TCP
-- 标准OPC-DA
-- 标准OPC-XML
-- chnt_pd7777
+- BACnet
+- Chnt_pd7777
 - Delta-RPI-M
 - goodWe
 - hkenergy
 - iec104_siemens
 - JingLang
-- Involar逆变器通讯
+- Involar Inverter
 - KsgProtocol
 - ModbusRtuUDP
-- modbus_master_ex_cf
-- modbus_master_ex_gsl
-- modbus_master_ex_zhwt
-- modbus_master_ex_sc
-- modbus_master_ex_sc_kz
-- modbus_master_monitor
-- modbus_tracker
+- Modbus_master_ex_cf
+- Modbus_master_ex_gsl
+- Modbus_master_ex_zhwt
+- Modbus_master_ex_sc
+- Modbus_master_ex_sc_kz
+- Modbus_master_monitor
+- Modbus_tracker
 - Net_Gap_C
 - PmuProtocol
-- qxy_dglg
-- qxy_hc
+- Qxy_dglg
+- Qxy_hc
+- Standard DLT645-1997
+- Standard DLT645-2007
+- Standard IEC104
+- Standard MODBUS RTU
+- Standard MODBUS TCP
+- Standard OPC-DA
+- Standard OPC-XML
 - Sungrow
 - TaokeProtocol
-- weather_client
-- wifiOmniProtocol
-- 
+- Weather_client
+- WifiOmniProtocol
+
 <!--End-->
   
 

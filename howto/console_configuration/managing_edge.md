@@ -1,167 +1,183 @@
 # Managing Edge
 
-Note: This article is in the progress of translation. Thanks for your visit!
+To use the Edge as a gateway to collect data and perform other functions, you need to create the Edge device and configure the appropriate communication parameters in **EnOS Edge > Edge Management**.
 
-为使用Edge作为网关收集数据以及其他各项功能，你需要在 **Edge网关 > Edge管理** 中注册该Edge，并配置相应的通信参数。
+## Before You Start
 
-## 开始前准备
+- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- Create the Edge model, product and devices. See [Device Management](/docs/device-connection/en/latest/device_management_overview). Note that the name of the Edge model must be **EnOS_Edge_Standard_Model** and the name of the Edge product must be **EnOS_Edge_Standard_Product**.
 
-- 有Edge管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见[策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
-- 完成Edge模型、产品和设备的创建。参见[设备管理](/docs/device-connection/zh_CN/latest/device_management_overview)。Edge模型的模型名称必须为 **EnOS_Edge_Standard_Model**， Edge产品的产品名称必须为 **EnOS_Edge_Standard_Product**。
+## Creating Edges
 
-## 添加Edge
+1. Select **EnOS Edge > Edge Management**;
 
-1. 选择 **Edge网关 > Edge管理**；
+2. Click **New Edge**. In pop-up window, select the Edge devices to be created from the list. click **Confirm** when you are done.
 
-2. 点击 **添加** ，在“添加Edge”窗口的列表中，从已创建好的Edge设备中，选择需要注册的Edge设备，点击**确定**，完成Edge设备的添加
+## Creating Connections
 
-## 添加连接
+After adding an Edge device, the next step is to add a connection so that sub-devices can connect to the Edge. 
 
-添加Edge设备后，下一步为Edge添加连接。在添加好的Edge设备的操作栏，点击 **查看** ，选择 **接入管理** ， 可以在“以太网”和“串口”两个标签页根据需要，点击 **添加连接** 。
+1. In the **Operations** column, click **View**.
 
-### 添加以太网连接
+2. Select **Access Management** tab page, select the type of the connection: **Ethernet** or **COM Port**.
 
-点击 **添加连接** 后，需要填入以下字段：
+3. Click **Add Connection**. 
+
+### Adding an Ethernet Connection
+
+In the pop-up window, fill in the following fields:
 
 .. csv-table::
    :widths: auto
 
-   "字段", "说明"
-   "连接名称", ".. 需要验证条件"
-   "模式", "目前支持TCP/IP客户端、TCP/IP服务端、HTTP(s)客户端、HTTP(s)服务端、UDP及其他"
-   "是否为短连接", "用于决定当前连接是长连接还是短连接，用户可自主设定，默认为长连接"
-   "地址（主）", "不同模式下的含义见下文"
-   "地址（备）", "不同模式下的含义见下文"
-   "规约类型", "需先选择“规约类型”，而后才可以选择对应规约类型下的具体规约程序"
-   "规约", "下拉列表中选择对应规约类型下的具体规约程序"
-   "配置文件", "选择了具体规约之后，可以下载标准模板文件，根据需要修改模板参数后再上传"
+   "Fields", "Descriptions"
+   "Name", "Identifier for the connection"
+   "Mode", "Whether Edge acts as a server or a client in a given protocol. Supports TCP/IP client, TCP/IP server, HTTP(s) client, HTTP(s) server, UDP and others. "
+   "Short Connection", "Used to determine whether the connection is a long connection or a short connection."
+   "Primary Interface", "See explanation below the table"
+   "Standby Interface", "See explanation below the table"
+   "Protocol Type", "You need to select the Protocol Type first before selecting a specific protocol version"
+   "Protocol", "Select a protocol version in the drop-down list"
+   "Configuration File", "After selecting the specific protocol, you can download the protocol.sys file and modify it as needed. Then upload it to the connection"
 
-地址（主）在不同模式下的含义如下：
+The meaning of **Primary Interface** in different modes are given as follows:
 
-- TCP/IP客户端：填写对端（TCP/IP服务端）的IP和端口号，表示要连接的对端服务器的主地址；
-- TCP/IP服务端：填写对端（TCP/IP客户端）的IP和端口号；表示允许连接本Edge的对端客户端的主地址；
-- HTTP(s)客户端：填写对端（HTTP(s)服务端）主地址；
-- HTTP(s)服务端：填写Edge端本地地址和端口号，格式形如172.0.0.0:端口号；
-- UDP：在UDP模式下会存在“对端地址(主)”和“本机地址(主)”两个参数，用户需分别填写对端和本地的IP和端口号，表示连接双方的主地址；
-- 其他：面向特殊模式的连接，当存在不属于上述各模式的连接时，请咨询Edge团队该参数的具体填写方式。
+- TCP/IP Client: Fill in with the IP address and port number of the server that Edge connects to;
+- TCP/IP Server: Fill in with the IP address and port number of the client that is allowed to be connected to the Edge;
+- HTTP(s) Client: Fill in with the primary address of the HTTP(s) server that Edge connects to;
+- HTTP(s) Server: Fill in with the address and port number of the Edge device in the format of "172.0.0.0: Port Number";
+- UDP: In the UDP mode, there are two parameters: "Remote Address (Primary)" and "Local Address (Primary)". Fill in with these addresses and port numbers respectively with the primary addresses of server and client.
+- Others: Select this mode when the connection does not fall into any of the above-mentioned modes. Consult support personnel on how to fill in the **Primary Interface** field.
 
-地址（备）在不同模式下的含义如下：
+The meaning of **Standby Interface** in different modes are given as follows:
 
-- TCP/IP客户端：填写对端（TCP/IP服务端）的IP和端口号，表示要连接的对端服务器的备用地址，当对端主地址异常时，Edge会自动切换连接该备用地址；
-- TCP/IP服务端：填写对端（TCP/IP客户端）的IP和端口号；表示允许连接本Edge的对端客户端的备用地址，当对端主地址连接异常时，允许对端以此备用地址连接Edge；
-- HTTP(s)客户端：该模式下暂不支持备用地址，无需填写；
-- HTTP(s)服务端：该模式下暂不支持备用地址，无需填写；
-- UDP：在UDP模式下会存在“对端地址(备)”和“本机地址(备)”两个参数，用户需分别填写对端和本地的IP和端口号，表示连接双方的备用地址；
-- 其他：该模式下暂不支持备用地址，无需填写
+- TCP/IP Client: Fill in with the IP address and port number of the standby server address that Edge connects.
+- TCP/IP Server: Fill in with the IP address and port number of the standby client address that is allowed to be connected to Edge;
+- HTTP(s) Client: Standby address is not supported in this mode. Leave it blank.
+- HTTP(s) Server: Standby address is not supported in this mode. Leave it blank.
+- UDP: In the UDP mode, there are two parameters: "Remote Address (Standby)" and "Local Address (Standby)". Fill in the remote and local addresses and port numbers respectively with the standby addresses of server and client.
+- Others: Standby address is not supported in this mode. Leave it blank.
 
-### 添加串口连接
+### Creating a COM Port Connection
 
-添加串口连接需要填入以下字段：
+To add a COM port connection, you need to fill in the following fields:
 
-- 连接名称
-- 串口号
-- 波特率
-- 数据位
-- 校验位
-- 停止位
-- 规约类型
-- 规约
-- 配置文件
+- Name: Identifier of the COM port.
+- Serial Port: Type of the COM port.
+- Baud Rate: The number of bits the port is able to transfer in a second.
+- Data Bit: Length of the bits that represents data. Fixed at 8.
+- Check Bit: Bit used for error detection.
+- Stop Bit: End of binary data.
+- Protocol Type: You need to select the Protocol Type first before selecting a specific protocol version.
+- Protocol: Select a protocol version in the drop-down list
+- Configuration file: After selecting the specific protocol, you can download the protocol.sys file and modify it as needed. Then upload it to the connection.
 
-## 添加设备
+## Creating Sub-devices
 
-添加完连接之后，你应当在连接下添加设备。
+After creating the connection, you should add the sub-devices that use the connection.
 
-点击连接，选择 **添加设备** 。在此页面中需先选择对应的产品，而后选择该产品下的设备，而后为所选设备选择设备模板，点击保存按钮后完成设备添加操作
+1. Click the connection you created to expand it.
 
-## 编辑设备
+2. Click **Add Device**. 
 
-你可以点击相应设备操作栏的 |edit| 来编辑设备信息；如果需要批量编辑设备信息，可以在连接处选择 **导出** 然后在下载的设备列表中进行批量编辑，如下图所示：
+3. Select a product that the sub-device belongs to. 
+
+4. In **Template Setting** , select the tempate for the sub-device.
+
+## Editing Sub-devices
+
+You can edit the sub-device information by clicking |edit| in the **Operation** column. if you need to edit the sub-device information in batch, you can select **Export** to the right of the connection and then edit in batch in the downloaded sub-device list, as shown below:
 
 .. |edit| image:: ../../media/button_edit.png
 
 .. image:: ../../media/editing_device_in_batch.png
 
-### 配置逻辑地址或偏移量
+## Configuring Logical Address or Offset for Sub-devices
 
-由于一条连接下接入了多个设备，因此需为每个设备配置其逻辑编号及各类点的偏移量。其配置方法取决于所采用的通信规约及其设置。可以逐个设备进行配置，也可导出设备连接信息表线下配置完成后再导入系统，实现批量配置。
+Since multiple devices are connected using a single connection, each sub-device needs to be configured with its own logical address and the offset. The configuration method is subject to the communication protocol used and its settings. Configure the logical address and offset on a device-by-device basis. You can also export the sub-device information in batch and configure it offline, then import it into the system.
 
-1. 逐个设备进行配置
+1. Device-by-device configuration
 
-   点击设备后的 |018| 图标，可对此台设备进行编辑，如下图所示：
+   Click on the |018| icon to edit the device, as shown below:
 
-   .. |018| image:: ../../media/editing_device_button.png
+   .. |018| image:: ../../media/button_edit.png
 
-   .. image:: ../../media/configuring_local_address.png
-      :alt: 图：逐个设备配置逻辑编号及偏移量
+   .. image:: ../../media/configuring_logical_address.png
+      :alt: Figure: Configuring the Logical Address and Offset Device by Device
 
-2. 批量配置
+2. Batch configuration
 
-   点击连接下的导出按钮，下载连接信息表填写后，再点击导入按钮上传信息表，如下图所示：
+   Click the Export button under the connection to download the connection information form. After filling in required fields, click the Import button to upload the information form.
 
-   .. image:: ../../media/batch_configuring_local_address.png
-      :alt: 图：设备连接信息表
+.. note:: The exported table supports configuring AI, DI, PI, AO, DO and PO offsets. The format is n-n, where n is an integer, such as 0-50. When there are multiple offsets at the same time, use \# to separate them, such as 0-50\#1000-1050.
 
-.. note:: 导出的表中支持AI，DI，PI，AO，DO，PO偏移量的配置。基本的配置方式为用短划线连接，如0-50，当同时存在多个偏移量时，可用\#隔离，如0-50\#1000-1050。
+## Forwarding Data
 
-
-## 转发数据
-
-你也可以根据需求，将Edge收集到的数据转发给第三方系统。设置数据转发的步骤与连接Edge和EnOS的步骤类似，包括添加连接、添加设备、配置连接相关参数。EnOS支持以下使用以下规约进行数据转发：
+You can also forward the data collected by Edge to third-party systems as needed. The steps for setting the data forwarding are similar to those done in **Access Management**, including adding connections, adding sub-devices, and configuring connection parameters. EnOS supports forwarding data by using the following protocols:
 
 - IEC104
 
-### 使用IEC104转发数据
+### Using IEC104 to Forward Data
 
-1. 点击 **添加设备** ，填写以下字段后点击确定：
+1. Click **Add Connection**, fill in the following fields:
 
-   - 连接名称
-   - 连接模式
-   - 地址
-   - 规约
-   - 配置文件：可以根据需要，下载配置文件并修改后再上传
+   - Name: Identifier of the connection
+   - Mode: Whether Edge acts as a server or a client in a given protocol. Supports TCP/IP client, TCP/IP server, HTTP(s) client, HTTP(s) server, UDP and others.
+   - Primary Interface: See explanation below.
+   - Protocol: Select an IEC104 protocol.
+   - Configuration File: You can download the profile and modify it as needed before uploading it.
+  
+  The meaning of **Primary Interface** in different modes are given as follows:
 
-2. 点击连接，选择 **添加设备** ， 使用设备模型和产品筛选处需要添加的设备，点击 **保存** ；
+ - TCP/IP Client: Fill in with the IP address and port number of the primary server address that Edge connects.
+ - TCP/IP Server: Fill in with the IP address and port number of the primary client address that is allowed to be connected to Edge;
+ - HTTP(s) Client: Fill in with the primary address of the HTTP(s) server that Edge connects to;
+ - HTTP(s) Server: Fill in with the address and port number of the Edge device in the format of "172.0.0.0: Port Number"
+ - Others: Select this mode when the connection does not fall into any of the above-mentioned modes. Consult support personnel on how to fill in the **Primary Interface** field.
 
-3. 为设备选择转发模板，点击 **保存**
+2. Click **Confirm**. 
 
-   在完成添加设备后，系统会根据添加设备的顺序为设备自动分配序号，当然，用户也可修改设备序号。需要注意的是，设备的序号为从1开始的自然数，且在一个连接下必须连续且不可重复
+3. Click to expand the connection. Select **Add Device**
 
-## 发布配置
+4. Select the model, product and sub-device. 
 
-完成上述各种配置后，需将配置发布到对应的Edge设备或服务器上使配置生效。如下图所示：
+5. Select a template for the sub-device in **Template Setting** and click **Save**
+
+   After the device is added, the system automatically assigns an index to the sub-device according to the order in which the sub-device is added. Note that the indexes are natural numbers starting from 1, and must be continuous and non-repeatable under a connection.
+
+## Publishing Connection
+
+After completing required configurations, publish the connection to the corresponding Edge device or server to enable the connection. As show below:
 
 .. image:: ../../media/publishing_device.png
-   :alt: 图：发布配置到盒子
+   :alt: Figure: Releasing the Configurations to the Box
 
-## 通信测试
+## Testing Connection
 
-在用户完成添加连接、添加设备并完成相关配置发布后，可通过通信测试功能进行连接测试。点击连接右侧的 |test| 按钮进行测试。
+After adding the connections and sub-devices and publishing the connection, you can test the connection. Click the |test| button to the right of the connection to test it.
 
 .. |test| image:: ../../media/button_test.png
-   :alt: 图：测试按钮
+   :alt: Figure: Testing Button
 
-你可以用测试功能查看本Edge下各以太网、串口连接的情况，包括以下信息：
+You can use the testing function to view the connections of Ethernet and serial ports created under this Edge device, including the following information:
 
-- 数据：本连接下的各设备点的实时数据，用户也可以在数据标签页下使用置数功能
-- 原始报文：本连接下的原始通信报文
-- 日志：本连接下的通信日志，只显示Warning和Error类型的日志
+- Data: Real-time device data. You can set a measuring point value for a device.
+- Message: Communication messages under this connection
+- Log: Communication log under this connection. Only the logs of warnings and errors are displayed.
 
-### 置数
+### Setting Value
 
-点击 **数据** 标签页的 **置数** ，并设置一个值，点击 **发送** 即可让设备发送该数值作为模拟测点数据至EnOS，置数功能不会打断实时数据的上送，只是在上送数据流中插入一个你设置的数据。
+Click **Set** in the **Data** tab and set a value for a collection point, then click **Send** to let Edge send the value EnOS. This operation does not interrupt the uploading of real-time data from sub-devices to EnOS cloud but inserts the data you set into the uploading data stream.
 
 .. |view| image:: ../../media/button_view.png
 
-### 控制台
+### Console
 
-固化了常用的通信调试命令，包括基本ping测试，本机IP查看，Telnet命令和TCP连接查看命令。
+Common communication debugging commands are provided in **Console** tab, including basic ping testing command, local IP viewing command, Telnet command and TCP connection viewing command.
 
-其中，ping测试需在输入框中填写需要ping的IP地址；Telnet测试需填写IP和端口号。
+### Communication test for a single device
 
-### 单台设备的通信测试
-
-在 **接入管理** 标签页，点击单设备的 |view| 按钮，可对单台设备进行置数测试。此功能与批量通常测试中的置数功能一致，只是这里仅对单台设备进行测试。
+On the **Access Management** tab, click the |view| button for a single device to set value for the sub-device. This function is the same as the above setting value function, except that only a single device is tested here.
 
 .. |view| image:: ../../media/button_view.png
 

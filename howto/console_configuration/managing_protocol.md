@@ -1,54 +1,64 @@
-# Managing Protocol
+# Managing Protocols
 
-Note: This article is in the progress of translation. Thanks for your visit!
+Users can manage the protocols in **EnOS Edge > Protocol**.
 
-用户可以对规约规约列表中的规约进行管理。
+## About This Task
 
-## 任务描述
+This topic describes how to edit, release, upgrade and delete protocols.
 
-本文档介绍了编辑规约、发布规约、升级规约、删除规约的操作步骤。
+## Before You Start
 
-## 编辑规约
+Obtain permissions to manage protocols. For more information, see [Policies, roles, and permissions](/docs/iam/en/latest/access_policy).
 
-点击规约名称前的 **+** 号，展开规约版本列表，对于debug版本的规约，可以在操作栏中选择编辑。用户可以进行如下操作：
+## Editing protocols
 
-- 上传规约程序包
-- 更新配置模板文件protocol.sys
-- 更新点表模板文件point.csv
-- 更新规约描述
+Click **+** in front of the protocol name to expand the list of protocol versions. For debug-suffixed versions (**_debug**), you can click |edit| in **Operations** column to edit them. Users can perform the following operations:
+
+.. |edit| image:: ../../media/button_edit.png
+
+- Update the protocol program package by first downloading, then editing, and at last replacing the package with the edited version.
+- Update the system configuration file *protocol.sys* in the same way as protocol program package
+- Update point.csv  in the same way as protocol program package
+- Update the description
 
   .. image:: ../../media/edge_protocol_edit.png
 
-<!--可以编辑debug状态的文档，状态本身是如何设置的？-->
+<!--For the documents for which the debug status is editable, how to set their status? -->
 
-## 发布规约
+## Releasing Protocols
 
-对于版本号带有debug状态的规约，可以点击操作栏的**发布**按钮以发布该规约。发布之后debug状态会变为release状态，不可编辑。
+For protocols that have a version number with **_debug** suffix, you can release them by clicking |release| in the **Operations** column. The suffix will change from **_debug** to **_release**. The protocol becomes uneditable.
 
-## 升级规约
+.. |release| image:: ../../media/button_release.png
 
-如果当前规约下所有版本都已处于release状态，用户可以通过升级规约的方式，添加一个当前规约的新版本。在操作栏，选择**升级**后，在弹窗中输入以下信息：
+## Upgrading protocols
+
+If all the versions of a current protocol are released, the user can add a new version to the protocol by upgrading the protocol. Select |upgrade| in the **Operations** column and enter the following information in the pop-up window:
+
+.. |upgrade| image:: ../../media/button_upgrade.png
 
 .. list-table::
    :widths: auto
 
-   * - 参数
-     - 参数说明
-   * - 升级原因
-     - 有“新增功能”和“漏洞修复”两种选项。选择不同的原因会影响到版本号的确定
-   * - 程序包
-     - 规约程序的.bin文件
-   * - 配置模板文件
-     - 上传与新版规约对应的通信相关配置参数的protocol.sys模板
-   * - 点表模板文件
-     - 与当前规约对应的点表模板point.csv
-   * - 描述
-     - /
-   * - 影响范围
-     - 由于原有版本规约可能已被多个Edge使用，用户在此处可以选择新版规约的影响范围，即在已关联的Edge列表中选择需要更新到新版规约的Edge设备
+   * - Parameters
+     - Parameter descriptions
+   * - Upgrade Reason
+     - There are two options available, including "New Feature" and "Bug Fix". Select the reason for your update. 
+   * - Package
+     - Upload the *.bin* file of protocol program
+   * - System Configuration
+     - Upload protocol.sys template of the updated protocol
+   * - Point
+     - Upload *point.csv* of the new protocol
+   * - Description
+     - Enter the description of this update
+   * - Impact Scope
+     - Since the original protocol version may have been applied to multiple Edge devices, you can select which Edge devices the updated protocol applies to. Click **Click to select** to specify the Edge devices.
 
-## 删除规约
+## Deleting protocols
 
-用户可以删除不在使用状态的规约。
+Click |delete| in the **Operations** column to delete any protocol not needed.
 
-<!--未被使用=没有关联edge设备？ -->
+.. |delete| image:: ../../media/button_delete.png
+
+<!-- end  -->

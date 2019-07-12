@@ -1,31 +1,28 @@
-# Typical Deployment Model
+# Typical Deployment Mode
 
-There are three typical deployment models for EnOS Edge.
+EnOS™ Edge supports the following deployment modes:
 
-## Deployment Model 1
+## Deployment mode 1
 
-Edge connects to EnOS Cloud via the VPN tunnel created from the on-site network gateway. On the other side, the Edge connects to devices or third party systems via the Ethernet network.
-
+Edge communicates via a VPN link with cloud through a firewall, and connects to a third-party system or sub-devices via Ethernet.
 
 .. image:: ../media/image002.png
-   :alt: Figure: Deployment model 1
+   :alt: Figure: Deployment Mode 1
 
+## Deployment mode 2
 
-## Deployment Model 2
-
-The Edge application is deployed in light-weight wireless hardware such as Dell 3002, then connects to EnOS Cloud via 3G/4G network. On the other side, the Edge connects to devices or third party systems via the Ethernet network.
-
+Edge is deployed in a light-weight, wireless hardware product (such as Dell 3002), and communicates directly with the cloud over a 3G/4G network while connects toa third-party system or sub-devices via Ethernet.
 
 .. image:: ../media/image003.png
-   :alt: Figure: Deployment model 2
+   :alt: Figure: Deployment Mode 2
 
 
-## Deployment Model 3
+## Deployment mode 3
 
-The Edge is deployed with gatekeepers such as Nari Syskeeper. An Edge device is deployed separately inside and outside of the gatekeeper, with the inside one named Edge-1, and the outside one named Edge-2. Edge-1 connects to devices via the Ethernet network and then transfers data to Edge-2 through the gatekeeper private protocol. Edge-2 connects to the EnOS Cloud via the VPN tunnel created to the on-site gateway to the EnOS Cloud.
-
+Two Edges are deployed across an air gap. Edge 1 inside the air gap is connected to a third-party system or sub-devices via Ethernet, and then forwards the data to Edge 2 across the gap using a specific protocol. Edge 2 communicates with the cloud via a VPN link established through the firewall and then to the cloud.
 
 .. image:: ../media/image004.png
-   :alt: Figure: Deployment model 3
+   :alt: Figure: Deployment Mode 3
+   
 
 <!--end-->

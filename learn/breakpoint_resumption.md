@@ -1,26 +1,31 @@
 # Breakpoint Resumption
 
-EnOS Edge supports breakpoint data transfer resumption. When the internet connection between the on-site edge and the cloud breaks down, the Edge continues to ingest device data and stores data locally. When the connection recovers, it resumes transferring the historical data to the cloud.
+EnOS™ Edge supports breakpoint resumption. If the communication between the Edge and the cloud is interrupted, the Edge can continue to collect data from sub-devices and cache it locally. The data cached locally will be transmitted again once the network connection is restored.
 
-There is a bi-directional message acknowledgement mechanism between the Edge and the cloud, which ensures that all the ingested data are sent to the cloud. In this way, the integrity and unanimity of the data can be effectively guaranteed in case of network break.
+The dual-way message confirmation mechanism for Edge and cloud ensures that the data cached in the Edge must be sent to the cloud, ensuring data integrity in case of network interruption.
 
-The size of hardware storage required for breakpoint resumption can be
-calculated by the amount of domain points, data type, data sampling
-frequency, and time needs for local storage. The data size for one-day
-storage can be estimated by the formula below:
+The cache size can be calculated based on the following factors:
+- Number of measuring points
+- Data types 
+- Sampling periods
+- Time-to-live period for cached data and 
+- Storage size
 
-$$1\ day\ data\ (bytes) = (total\ domain\ points \times 25) \times (24h \times 3600s/h \div sampling\ frequency(s))$$
+The daily cache size per sub-device can be calculated as follows:
 
-An estimation example：
+Daily data volume = (total measuring points × measuring point size (byte)) × (24h × 3600s/h ÷ sampling period (s))
 
-Suppose that there are 100 devices, each device contains 50 domain
-points, the size of each point and its attributes is 25 bytes, the
-sampling frequency is 5s (24 hours continuous sampling), and a 64GB
-hardware drive is selected. Then the data amount for 1 day is estimated
-as below:
+Where the measuring point size can be defined as approximately 25 bytes.
 
-$$100 \times 50 \times 25 \times 24 \times 3600 \div 5 \div 1024 \div 1024 \approx 2060MB$$
+## Example
 
-To deduct system space, virtual memory space, and other reserved space,
-suppose there are 40GB disk space left, then the edge can store
-$40 \times 1024 \div 2060 \approx 20\ days$ of data.
+Assume that there are 100 devices, each sub-device has 50 points, each point and its related attributes occupy 25 bytes, the sampling period of the point is 5 seconds, and the data are continuously collected for 24 hours a day. Assume that a 64GB hard drive is selected;
+
+Then the amount of data one day per device is: 50 × 25 × 24 × 3600 ÷ 5 = 21,600,000 bytes. So the total cached data for 100 devices in Megabyte (MB) is 21,600,000 × 100 ÷1024 ÷ 1024  ≈ 2060 MB
+
+For the 64GB hard disk itself, space must be reserved for system, virtual memory space, and other required space. Assume that 40GB can be guaranteed for local storage;
+
+It can store 40 × 1024 ÷ 2060 = 20 days of data.
+
+
+.. note:: Excessively large data cache might cause issues in breakpoint resumption. Reserve a maximum of 4GB space for cache.

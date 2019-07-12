@@ -1,64 +1,74 @@
-# Creating Protocol
+# Creating Protocols
 
-Note: This article is in the progress of translation. Thanks for your visit!
+The administrator users can manage the communication protocols that EnOS Edge supports at **EnOS Edge > Protocol**, including adding, viewing, updating, publishing and deleting protocols. Non-administrator users can view various protocols supported by EnOS.
 
-管理员用户可以通过EnOS控制台提供的通信规约管理功能来管理EnOS Edge支持的通信规约，包括新增、查看、更新、发布、删除等操作；非管理员用户可以使用通信规约管理功能查看EnOS支持的各种规约。
+## About This Task
 
-## 任务描述
+This topic describes how to create protocols on EnOS console.
 
-本文介绍了如何通过通信规约管理功能进行规约管理。
+## Before You Start
 
-## 开始前准备
+- You should obtain the OU administrator account if you want to create a protocol.
 
-- 如需新增、更新、发布、删除规约，你需要获得该OU管理员权限。
+## Creating a protocol
 
-## 新建规约
+1. Select **EnOS Edge > Communication Protocol**. and then click **Add**;
 
-1. 选择 **Edge网关 > 通信规约**，点击 **新建规约**；
+2. In the protocol creation window, fill in the following information: 
 
-2. 在新建规约窗口填入以下信息：
-
-   .. csv-table::
+   .. list-table::
       :widths: auto
 
-      "参数", "参数说明"
-      "规约类型", "从EnOS预定义的规约中选择"
-      "角色", "即当前规约程序的自定义名称"
-      "名称", "上传与新版规约对应的通信相关配置参数的protocol.sys模板"
-      "程序包", "规约程序的bin文件"
-      "描述", "/"
-      "规约文档", "/"
-      "配置模板文件", "上传与当前规约对应的通信相关配置参数的protocol.sys模板"
-      "点表模板文件", "与当前规约对应的点表模板point.csv"
+      * - Parameter
+         - Parameter description
+      * - Protocol type
+         - Select from the protocols pre-defined by EnOS
+      * - Roles
+         - Select whether Edge acts as a server or client in its communication with sub-devices
+      * - Name
+         - Identifier for the protocol
+      * - Package
+         - bin file of protocol program
+      * - Description
+         - /
+      * - Protocol document
+         - /
+      * - System Configuration
+         - Upload protocol.sys that contains communication configuration for this protocol
+      * - Point
+         - Point.csv of this protocol
+<!--end-->
 
    .. image:: ../../media/edge_protocol_create.png
 
-3. 点击 **保存**，完成新规约的创建，用户可在通信规约页的列表中查看新增的规约。
+3. Click **Confirm** to complete the creation of a new protocol. You can view the new protocol in the list.
 
-## 发布规约
+## Releasing a protocol
 
-对于版本号带有debug状态的规约，可以点击操作栏的**发布**按钮以发布该规约。发布之后debug状态会变为release状态，不可编辑。
+For protocols that have a version number with **_debug** suffix, you can release them by clicking the |Release| button in the **Operations** column. The suffix of released protocols will change from **_debug** to **_release**, and become non-editable.
 
-## 结果
+.. |Release| image:: ../../media/button_release.png
 
-新增规约按照 *规约类型* - *角色* - *规约名称* 的方式显示，例如如果你新建了一个BACnet类型的客户端规约，名称是“bacnet_test_renbin”，则创建成功之后的规约名称为“BACnet-Client-bacnet_test_renbin”。
+## Results
 
-新增规约的默认版本为v1.0_debug。规约的版本命名遵循如下规范：
+The new protocol is displayed in the form of *Protocol Type* - *Role* - *Protocol Name*. For example, if you create a new client protocol of BACnet with the name "bacnet_test_renbin", its name will be BACnet-Client-bacnet_test_renbin".
 
-v*主版本号*.*修订版本号*_发布状态
+The default version of the new protocol is **v1.0_debug**. The protocol version is named as per the following rules:
+
+v*Main Version No.*.*Revision No.*_*State suffix*
 
 .. csv-table::
        
-   "字段", "说明"
-   "主版本号", "表示有新增功能的版本。取值为数字，从1开始，当有新增功能时，主版本号加1。例如原规约版本是v1.0_release，则当新版本有新增功能时，则应修改主版本号，变成v2.0_release"
-   "修订版本号", "用于标识有问题修复。取值为数字，从0开始，当有问题修复时，主版本号不变，修订版本号加1。例如原规约版本是v1.0_release，则当新版本只包含问题修复，而无新增功能时，则应修改修订版本号，变成v1.1_release"
-   "发布状态", "用于标识发布状态，取值包括_debug或_release。dubug状态的规约，通常为刚上线的内测版规约程序，允许规约管理者替换规约文件；而release状态的规约是正式发布的规约，将被锁定，只可使用、查看和下载，不可修改"
+   "Fields", "Descriptions"
+   "Main Version No.", "Represents a version containing new functions. Its value is an integer starting from 1. The main version number increments by 1 for every new version. For example, if the original version is v1.0_release, then the main version number should be modified to v2.0_release when a new function is added"
+   "Revision number", "Identifies a fixed problem. Its value is an integer starting from 0. When a problem is fixed, the revision number increments by 1. For example, if the original version is v1.0_release, when only a problem is fixed for current version without any function added, the version number should be modified to v1.1_release."
+   "State suffix", "Identifies the release state. Its value may be **_debug** or **_release**. The protocols with **_debug** are usually the beta-version protocols that have just become available. The protocol manager can still modify a **_debug** protocol. Protocols with **_release** are the officially released protocols, which are locked and can only be used, viewed and downloaded and cannot be modified."
 
 <!--End-->
 
-## 下一步操作
+## Next step
 
-用户可以对新建的规约进行管理，参见[管理规约](managing_protocol)。
+Users can manage the protocols. See [Managing Protocols](managing_protocols).
 
 
 

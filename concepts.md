@@ -1,54 +1,66 @@
 # Concepts
 
-Note: This article is in the progress of translation. Thanks for your visit!
+Before you learn how Edge works, read the following key concepts:
 
 
-在进一步了解Edge之前，你需要了解以下关键概念及术语：
+## Sub-device
+
+The devices connected to EnOS Edge are referred to as sub-devices.
+
+## Connection
+
+A connection refers to the TCP link established between the Edge and its sub-devices or 3rd-party systems. A connection can be used to access the data of a sub-device or a batch of sub-devices. A connection uses a protocol to communicate with sub-devices or 3rd-party systems.
 
 
-## 子设备
+## Template 
 
-通过EnOS Edge接入的设备都统称为子设备。
+The template determines how data collected by using a protocol is mapped into the model measuring points defined on EnOS Cloud. Its main function is to map the measuring points prescribed in the protocol (to be specific, the *point.csv* file of the protocol) to the measuring points defined in the device model. In addition, the template includes calculation formulas and scripts, so that data from selected devices will be processed with the formula or calculation script before mapping it to measuring points.
 
-## 连接
+## Protocol
 
-通讯时Edge与其他设备或其他系统之间建立起的TCP链路连接，即通讯通道。一个连接可以用于接入一个子设备数据，也可以接入一批子设备的数据。一个连接使用一个规约与设备（或系统）进行通讯。
+The protocol refers to a system of rules to be executed for the communication between two entities (Edge and sub-devices, Edge and 3rd-party systems). It refers to the communication protocol on the application layer, such as IEC104, OPC and Modbus.
+
+In EnOS Edge, the protocol includes *protocol program*, *configuration file* and *point.csv*.
+
+### Protocol Program
+
+If you are using C++ to develop the protocol, the protocol program refers to the *.bin* file to implement the protocol.
+
+### Protocol.sys
+
+This file is the parameter configuration file required by the protocol program. In **EnOS Edge > Protocol**, the *protocol.sys* of each protocol is provided for users to download and configure.
+
+### Point.csv
+
+Point.csv of a particular protocol contains the sequence of measuring points to be uploaded to EnOS or forwarded to a third-party system. In **EnOS Edge > Template**, you can download *point.csv*.
+
+## Protocol Document
+
+The is uploaded by the protocol developers along with the protocol program. The protocol document covers the configuration and usage instructions.
+
+## Measuring Point
+
+The measuing point refers to the data collected by Edge to be sent to EnOS. A measuing point can be a device collection point or a device control point.
+
+### Collection Point
+
+The collection point refers to the measuring point sent by sub-device to cloud through Edge, as defined in *point.csv*, such as the measuring points for wind speed and motor speed.
+
+A colllection point can be one of the following type of data:
+
+- AI: analogous input
+- DI: digital input
+- PI: pulse input
+
+### Control Point
+
+The control point is a measuring point the cloud sends to a sub-device through Edge, to set or reset value for a measuring point, or to give commands to the device to start or stop, as defined in *point.csv*. The control point is further divided into the following:
+- Analogous output （AO, whose value can be any data type)
+- Digital output (DO, whose value is usually an integer)
 
 
-## 设备模板 
 
-设备数据接入后映射到系统中设备模型上的配置文件，模板主要实现的功能是将规约中接入的数据点（规约中点表文件point.csv中定义的点）映射到设备模型中定义的标准点上。除此之外，模板中还承载了计算公式，脚本的功能，主要用于定义某一种类型的设备在映射时可以使用一定的公式或者计算脚本。
 
-## 规约
 
-指两个设备之间互相通讯共同遵守的通讯协议，主要是应用层的通讯协议，如IEC104，OPC，Modbus等。
 
-在EnOS Edge中，规约包括个三个重要的要素：*规约程序*，*配置文件*，*点表模板*。
 
-## 规约程序
-
-规约程序文件，对于C++实现规约即程序的bin文件，是规约的重要组成部分。
-
-## 配置文件
-
-即规约程序所需要的参数配置文件，必须使用标准文件名及格式：`protocol.sys`，在规约中心中，会提供每一个规约的配置文件的模供用户下载并进行配置。
-
-## 点表模板
-
-特定规约所使用的文件，包含了使用Edge设备按照特定规约向EnOS上传或第三方系统转发的测点的顺序信息。点表模板必须使用包含标准文件名及文件格式的point.csv文件。在控制台**Edge网关 > 模板配置**中，可以下载到某个规约的点表模板，供实际接入Edge设备时使用。
-
-## 规约文档
-
-规约开发者随着规约程序一起上传的规约描述文档，包括规约使用配置说明，使用方法等。
-
-## 设备采集点
-
-与Edge连接的子设备上送给Edge的测点，即AI, DI,PI类型的测点。定义在了点表模板point.csv文件中。
-
-## 设备控制点
-
-与Edge连接的子设备提供的可以下发控制报文的、控制类型的点，即AO,DO类型的点。定义在了点表模板point.csv文件中。
-
-## 模型测点
-
-EnOS包含的设备模型所定义的标准测点，一个模型测点既可以作为设备采集点，也以作为设备控制点。

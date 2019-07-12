@@ -1,66 +1,65 @@
-# Creating Template
+# Creating Device Templates
 
-Note: This article is in the progress of translation. Thanks for your visit!
+The device templates can be created in the following ways:
 
-设备模板的创建主要以下方式：
+- Creating a new template online by using the **Add** button in **EnOS Edge > Template** .
+- Export a template of an existing device template, then modify it offline, save it as a new template, and import it into EnOS
 
-- 通过 **添加按钮** 在线创建新模板
-- 基于现有设备模板导出模板，而后基于此模板离线做修改，再导入EnOS
+The latter is applicable to the scenario where the template to be created is just slightly different to an existing one.
 
-后者适用于两种设备模板近似的场景，通过复制的方式获取副本而后稍作修改得到新模板，可减少实施的工作量。
+## About This Task
 
-## 任务描述
+This topic describes how to manage templates in the EnOS console.
 
-本文介绍了通过EnOS控制台进行模板管理的步骤。
+## Before You Start
 
-## 开始前准备
+- Obtain the access to template management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
 
-- 如需新建、更新、发布、删除模板，你需要获得该OU管理员权限。
+## Creating a Template Online
 
-## 在线创建模板
+### Creating Basic Information
 
-### 在线创建模板基本信息
-
-1. 选择 **Edge网关 > 模板配置**，点击 **添加** 按钮；
-
+1. Select **EnOS Edge > Template** and then click the **New Template** button. Fill in the following fields.
 
    .. csv-table::
 
-      "字段", "字段说明"
-      "模板名称", "/"
-      "设备品牌", "/"
-      "设备型号", "/"
-      "版本", "/"
-      "设备模型", "该字段的选择将决定设备具有的模型点，即模型定义的属性"
+      "Fields", "Descriptions"
+      "Template Name", "/"
+      "Device Brand", "/"
+      "Device Model", "/"
+      "Version", "/"
+      "Device Model", "Select the model for the sub-devices."
       
    .. image:: ../../media/edge_template_create.png
 
-2. 点击 **确定**，完成新模板基本信息的创建。
+2. Click **Confirm** to complete the creation of basic template information.
 
-### 编辑并上传点表文件point.csv
+### Editing and uploading the point table file point.csv
 
-1. 在设备模板列表中找到刚刚创建的模板，在操作栏选择**编辑**，进入模板编辑页面;
+1. Select the template you created and click |edit| in the **Operations** column.
 
-2. 在基本信息处，点表文件一栏，点击**点表模板**下载图标，根据模板将会使用的规约即版本选择对应的点表模板，点击下载*point.csv*；
+   .. |edit| image:: ../../media/button_edit.png
 
-3. 打开点表文件，点表文件除首行字段名称之外的信息皆为示例，可以删除。在点表文件中录入设备测点相关信息，说明如下：
+2. At **Point File** in the basic information section, click |download template|, select a template, and then click |download| to download the *point.csv* file;
+   
+   .. |download template| image:: ../../media/button_download_template.png
+   .. |download| image:: ../../media/button_download.png
 
-   .. image:: ../../media/point_csv_file.png
+3. Open *point.csv*. Enter the measuring point information in the file.
+
+      .. csv-table::
+
+      "Fields", "Descriptions"
+      "Measuring Point Name", "The name of collection points from the device."
+      "Point Number", "Information indicating the location of the data. EnOS use this number to map collection points to measuring points."
+      "Value Type", "Data type of measurepoint. See below for details"
+      "Point Type", "Point types supported by EnOS"
+      "Coefficient", "If you want to convert the data type or unit, you need to perform an operation similar to a(x+b) in the communication protocol, where a is the coefficient. In this scenario, you must set this value."
+      "Base Value", "If you want to convert the data type or unit, you need to perform an operation similar to a(x+b) in the communication protocol, where b is the base value. In this scenario, you must set this value."
+      "Alias", "The alias is an attribute of the measuring point. Its default value is the point number"
 
 
-   .. csv-table::
-
-      "字段", "字段说明"
-      "测点名", "即从设备上采集到的数据点，建议使用易于辨识的字段，此字段不会被EnOS作为测点名显示。"
-      "点号", "表示设备点位置的信息，依据规约而不同，EnOS会根据点号确定将测点映射到EnOS模型上的属性"
-      "值类型", "测点的数据类型，详细信息见下文"
-      "点类型", "EnOS支持的点类型"
-      "系数", "如果为了转换数据类型或者单位，在通信规约中要执行类似a(x+b)的运算，a即为此处的系数，应根据需要自定义该系数的值"
-      "基值", "如果为了转换数据类型或者单位，在通信规约中要执行类似a(x+b)的运算，b即为此处的基值，应根据需要自定义该基值的值"
-      "别名", "此别名会作为测点的一个属性被上传，默认值为点号。"
-
-
-  不同规约支持的测点数据类型各不相同，通常需要配置以下类型的测点：
+  Different protocols support different types of measuring points. It is usually necessary to configure the following types of measuring points:
 
   - byte
   - short
@@ -72,64 +71,71 @@ Note: This article is in the progress of translation. Thanks for your visit!
   - double
 
 
-4. 填写完成并保存文件，点击**上传**。
+4. Fill in all the required fields and save the file, then click **Upload**.
 
-   如果上传完成之后用户还需要编辑点表文件，可按照以下方式操作：
-   - 可以点击**下载**已上传的点表文件，离线编辑后，再次点击**上传**完成修改；
-   - 直接点击**编辑**，在线编辑点表文件。
+   You can click |edit| to edit point.csv online.
 
-### 配置点映射
+   .. |edit| image:: ../../media/button_edit.png
 
-上传了点表模型point.csv文件后，需要将设备采集点和控制点映射至模型测点。
+### Configuring Point Mapping
 
-1. 在选定的模板的操作栏，点击**编辑**，进入模板编辑页；
+After uploading *point.csv* , you need to map the device collection points and control points to the model measuring points.
 
-2. 在点映射栏的列表中，系统根据设备采用的模型，列出了全部模型测点；
+1. In **Operations** column of the selected template, click |edit| to enter **Edit Template** page.
+   .. |edit| image:: ../../media/button_edit.png
 
-   .. image:: ../../media/edge_template_model_points.png
+2. The list in **Points Mapping** displays all the measuring points as defined in the model
 
-3. 在映射栏，对需要配置点映射的模板属性，点击**映射关系点**，进入映射配置页面：
+   .. image:: ../../media/edge_template_measuring_points.png
 
-   .. image:: ../../media/edge_template_mapping_config.png
+3. In the **Mapping** column, click |edit| to enter the mapping configuration page:
 
-4. 如需将设备采集点映射至模型测点，则在采集页面进行点映射配置；用户可以选择一对一映射或公式映射，参见[边缘计算](../../learn/edge_computing)；
+   .. |edit| image:: ../../media/button_edit.png
+   .. image:: ../../media/edge_template_collection_points.png
 
-5. 如需将设备控制点映射至模型测点，则在控制页面进行点映射配置；用户只能选择一对一映射的方式；同一个模型测点，可以既映射设备采集点，又映射设备控制点。
+4. To map collection point, on **Collect** tab, Select one-to-one mapping or formula mapping. For more information, see [Mapping](../../learn/edge_conputing). 
+   For one-to-one mapping, just select the collection point or control point you want this measuring point to map to. 
 
-   在控制页下，AO型的设备点，其值不可设置，由应用直接下发测点值；DO型的设备点，其取值可在测点右侧输入框中填写，若不填写，则以应用下发的测点值代替
+   For formula mapping, click **Add Formula**. Then select the formula and parameters for the calculation in the pop-up.
 
-   .. image:: ../../media/edge_template_model_control_points.png
+5. If you want to map the control points to the measuring points, go to **Control** tab, select the control point you want this measuring point to map to. You can only use one-to-one mapping for control points.
 
-   你也可以通过导出/导入方式批量配置点映射，文件格式为.csv。通过该种方式智能配置一对一映射，不能配置复杂公式类映射。
+   In **Control** tab, the value of AO control point cannot be set but is issued by the application directly. You can enter the value of DO control points. The DO default value is the value set by an application.
 
-6. 设定模型测点的上送类型。EnOS支持以下上送类型：
+   .. image:: ../../media/edge_template_control_points.png
 
-   - 实时上送：Edge采集到一个点就立刻发送到云端
-   - 定时上送：Edge以用户设定的上送周期将采集点值上送至EnOS
-   - 变化上送：Edge在采集点值发生变化时，将最新的采集点值上送到EnOS
+   You can also configure point mapping in batch by exporting and then importing *mapping.csv*. Only one-to-one mapping can be configured if you select this way. Formula mapping cannot be configured.
 
-### 编写边缘计算脚本
+6. Set the **Upload Type** for the measuring points. EnOS supports the following uploading types:
 
-在脚本栏选择 **创建**，在弹出的创建脚本窗口中即可在线编辑脚本。
+   - REALTIME: Once the Edge collects a point, it will send it to the cloud immediately
+   - TIMER: The Edge sends the collection point value to EnOS every specific time interval. Set the interval in **Upload Interval**.
+   - CHANGE: The Edge sends the latest point value to EnOS when the value of the point changes.
 
-你也可以选择 **导出**，下载脚本模板之后离线编辑脚本，再使用**导入**上传脚本。
+### Script Processing
 
-关于脚本编写规范，参见[边缘计算](../../learn/edge_computing)
+Select **Create** under **Script** and edit the script online in the pop-up.
 
-点击 **保存**，完成模板创建。
+You can also select **Export** to download the script template and edit it offline, and then select **Import** to upload edited script.
 
-## 通过导出/导入方式配置模板
+For scripting specifications, see [Edge Computing](../../learn/edge_specification/edge_computing)
 
-1. 选择 **Edge网关 > 模板配置**，在模板列表中勾选模板，选择 **导出**，下载现有设备模板信息作为基础模板；
+Click **OK** to complete the script.
 
-2. 在下载的json文件中，编辑响应的字段，修改模板，点击 **导入**，上传修改后的json文件，完成模板的创建。
+## Configuring a Template by Exporting/Importing
 
-## 修改设备模板
+1. Select **EnOS Edge > Template**, select a template in the template list, and click **Export** to download the existing template.
 
-设备模板创建成功后，可以点击 **编辑** 进行修改。如果该模板正在被Edge设备使用，修改完模板，点击 **保存** 之后，会弹出对话框。用户需要选择修改后模板影响的Edge设备。
+2. In the downloaded JSON file, modify the values and save it. Click **Import** to upload the modified JSON file.
 
-- 如果选择了全部Edge设备，EnOS将直接更新原模板；
-- 如果选择了部分Edge设备，则EnOS会为被选择的部分Edge创建一个新的模板，其名称为“原模板名称_copy”，如下图所示：
+## Modifying Device Template
+
+After a template is created, you can click |edit| to modify it. If the template is being used by an Edge device, you need to select the Edge devices affected by your modification after you save your changes.
+
+.. |edit| image:: ../../media/button_edit.png
+
+- If all the Edge devices are selected, EnOS will update the original template directly;
+- If only part of the Edge devices are selected, EnOS will create a new template for the selected Edge devices, whose name is "originalTemplate Name_copy", as shown below:
 
 .. image:: ../../media/edge_template_edit_confirm.png
 

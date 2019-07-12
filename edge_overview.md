@@ -1,65 +1,63 @@
 # EnOS™ Edge Overview
 
-Note: This article is in the progress of translation. Thanks for your visit!
+EnOS™ Edge is the data collector of EnOS Cloud that collects field device data at the edge of IoT or integrates with 3rd-party systems to capture, analyze, and forward data to the EnOS™ cloud.
 
-EnOS™ Edge是EnOS Cloud的数据采集前置，用于从物联网边缘采集现场设备数据，或对接第三方系统以获取、分析数据，并将数据转发到EnOS™云端供用户使用。
+EnOS™ Edge itself is a software stack that significantly reduces the computing load on the cloud by moving some computing loads into the edge, and provides quicker response to device control.
 
-EnOS™ Edge本身是一套软件栈，通过将部分计算移至边缘端，显著减少云端的计算负载，并且可以对设备的控制提供更低延迟的响应。
-
-EnOS Edge的软件架构如下图所示：
+The software architecture of EnOS Edge is as follows:
 
 .. image:: media/edge_software_architecture.png
-   :alt: 图：Edge软件架构图
+   :alt: Figure: Edge software architecture
 
 
-## 功能特性
+## Functionality
 
-EnOS™ Edge作为远景EnOS™ IoT平台的数据采集前置，具备设备快速接入，设备控制，数据自动同步云端，断点续传，远程集中管理，开放、丰富的规约库等特点。
+As the data collector of Envision EnOS™, EnOS™ Edge features fast device connection, device control, automatic data synchronization to the cloud, breakpoint resumption, remote centralized management, and open and rich protocol library.
 
-### 快速及可扩展的设备接入
+### Device Connection
 
-- 基于内置的规约库及设备模板库，及对接入过程的优化处理，用户可以实现快速以多种协议接入相应的设备。
+- Based on the built-in protocol library, template library, and the optimized connection process, users can quickly connect devices with multiple protocols.
 
-  EnOS™ Edge不仅具有丰富的规约库，支持当前电力行业绝大多数设备接入场景。同时还结合远景开发者平台，提供开放的规约开发能力，开发者用户可以根据自身需求，自行开发规约并上传到开发者平台，然后发布到Edge中使用。
+  EnOS™ Edge has a rich protocol library that supports most of the device connection scenarios in the power industry. In addition, it also provides open protocol development capabilities on the Envision developer platform. Developers can develop their own protocols and upload them to the developer platform as necessary, and then publish them to the Edge.
 
-- 基于Web页面的调试远程调试页面，实现用户远程便捷调试操作；
+- The testing function on the console helps users remotely test Edge devices.
 
-### 设备控制
+### Device Control
 
-与云端创建的设备模型相匹配，支持云端下发控制指令到具体设备。
+EnOS™ Edge supports forwarding commands from the cloud to specific devices.
 
-详细信息，参考[设备控制](learn/device_control)
+For details, see [Device Control] (learn/device_control)
 
-### 云端自动同步
+### Synchronization with EnOS Cloud
 
-EnOS™ Edge作为云端功能的延伸，通过与云端深度集成，在保证Edge与云端网络畅通及对应的端口正常工作的情况下，可以实现：
+As an extension of the cloud functionality, EnOS™ Edge enables the following capabilities:
 
-- 设备数据自动同步到云端；
+- Synchronize device data to the cloud;
 
-- 自动（或手动）更新云端的模型变更；
+- Automatically or manually update the model changes in the cloud;
 
-- 自动下载云端的接入，通讯调试等配置；
+- Download the configurations, such as connection parameters, from the cloud
 
-### 边缘计算
+### Edge computing
 
-- 在Edge本地提供边缘计算能力，支持对接入测点进行常用公式处理，用户在云端自定义计算脚本并下发；
+- The Edge provides edge computing capability, supporting common formula processing for measuring points. Users can also write and customize calculation scripts on the console.
   
-- Edge中累计了常用的边缘计算的函数算子，同时支持对算子进行扩展；
+- The Edge has common function operators for edge computing, and supports operator expansion.
 
-参见[边缘计算](learn/edge_computing)
+See [Edge Computing](learn/edge_computing)
 
-### 断点续传
+### Breakpoint resumption
 
-当Edge与云端网络通讯中断后，能够自动缓存通讯中断时间段内的数据，通讯恢复后，按照从旧到新的时序顺序自动补传到云端，实现断点续传功能。通讯中断后，数据的缓存的能力取决于采用的设备的硬件配置。
+If network communication between the Edge and the cloud is interrupted, the data generated in the communication interruption period is automatically cached. After the communication is restored, the cached data will be automatically re-transferred to the cloud in chronological order. How much data can be cached is subject to hardware configuration.
 
-参见[断点续传](learn/breakpoint_resumption)
+See [Breakpoint Resumption](learn/breakpoint_resumption)
 
-### 远程集中管理
+### Remote Centralized Management
 
-- 提供基于Web GUI的集中配置中心，实现远程通讯配置，数据调试，设备接入；
+- The EnOS console provides communication configuration, testing, and device connection functions;
 
-- 在保证相应网络和端口畅通的前提下，可以实现远程升级，修改配置参数等操作；
+- The Edge supports firmware OTA upgrade and the modification of configuration parameters;
 
-- 云端实时监控每一个Edge及其接入的设备的状态，同时提供接口供第三方应用调用；
+- The cloud monitors the status of each Edge device and its connected devices in real time, and provides APIs for applications.
 
 <!--end-->

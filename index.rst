@@ -31,7 +31,6 @@
    :maxdepth: 2
    :caption: How-to's
 
-   howto/edge_installation_guide/index
    howto/console_configuration/index
 
 .. toctree::

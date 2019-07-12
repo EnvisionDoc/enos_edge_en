@@ -1,15 +1,23 @@
 # Device Control
 
-EnOS Edge supports device control by receiving control commands from the applications in the cloud, converting them to protocol commands, and sending the commands to devices.
+The prerequisites required for the Edge to control sub-devices include the following:
 
-The prerequisites for device control include:
+- The applications on the cloud can send device control commands;
 
-- The application in the cloud platform has the function of sending out commands.
+- The protocol with which Edge communicates with the sub-device supports the command;
 
-- The device communication protocol supports control commands.
+- The current Edge supports the following control types:
 
-- The Edge supports the following control commands:
+ - Remote control  DO: sending the switch quantity commands;
 
-  - DO: Digital output, 0/1 command, Boolean
+ - Remote tuning AO: sending the analog quantity commands.
 
-  - AO: Analog output
+Device control by EnOS™ Edge includes the following steps performed by Edge:
+
+1. Receiving the control commands sent from applications on the cloud;
+
+2. Converting them into protocol-conforming messages that the sub-device can process;
+
+3. Sending messages to the sub-devices to for them to execute the commands.
+
+

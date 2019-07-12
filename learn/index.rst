@@ -11,12 +11,11 @@ platform.
    :maxdepth: 1
    :titlesonly:
 
-   data_ingestion
-   data_normalization
+   data_ingestion_normalization
+   edge_computing
    breakpoint_resumption
    device_control
-   communication
-   data_resolution
+   data_precision
    capacity
    typical_deployment_model
    edge_security

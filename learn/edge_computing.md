@@ -1,42 +1,40 @@
 # Edge Computing
 
-Note: This article is in the progress of translation. Thanks for your visit!
+It is often necessary to perform some pre-processing or simple calculation for model measuring points, and such operations can be done by using EnOS Edge.
 
-对于模型点，往往需要做一些预处理，或者执行某些简单计算，这些可以直接利用EnOS Edge边缘计算模块来执行。
+Edge computing is dependent on the template. Different device types need to use different templates for communication. If the computing logic for a certain device type is edited on a template, you can perform computing for all devices of this certain type by using this template.
 
-Edge中所有边缘计算都是依附模板而存在，模板是Edge与设备进行通讯的一个驱动，不同的设备类型需要使用不同的模板进行通讯，即如果将针对某一种设备类型的计算逻辑编辑在对应的模板上，即可实现对所有该种类型的设备进行统一的计算处理。
+In the **EnOS Edge > Template** section, click **edit** . Then you can use the following edge computing functions:
 
-在**Edge网关 > 模板配置 > 模板编辑**的部分，用户可以使用以下边缘计算功能：
+- Point mapping: maps collection points and control points to measuring points defined in the model after processing them using formula. Or directly maps these points to measuring points. 
+- Script: processes the collection points and control points by using calculation script.
 
-- 设置点映射，将将设备端的采集点经过一定运算加工之后，映射到预先定义的模型测点上；
-- 使用Groovy脚本对数据进行处理。
+## Point mapping
 
-## 点映射
+EnOS provides a set of formulas to process the collection and control points collected from or sent to the device by performing certain operations. Then Edge maps the points to the predefined measuring points in a model.
 
-EnOS提供了一系列公式，用以将设备端的采集点经过一定运算加工之后，映射到预先定义的模型测点上。
-
-EnOS预置的公式列表如下。为了说明方便，在列表中，模型测点用y表示;采集点用 x(i) 表示，其中，i代表采集点被添加的顺序。
+The list of formulas in EnOS is given as follows. The model measuring points in the list are represented by y, while the collection  and control points are represented by x(i), where i represents the order in which the points are collected.
 
 .. csv-table::
 
-   "公式名称", "说明"
-   "NO_MAPPING", "不对此模型测点做映射"
-   "EQUAL", "模型测点的值等于采集点的值，即y=x"
-   "SUM", "求和，将添加到本模型测点的采集点值加总求和，y=x(1)+x(2)+...+x(i)"
-   "PRODUCT", "相乘，将添加到本模型测点的采集点相乘求积，可以配置一个可配系数y=a* x(1) * x(2) *...* x(i) *"
-   "CROSS_PRODUCT", "内积：用于计算被添加到本模型测点的各采集点的内积，并乘以一个可配系数a（即“操作数”参数），注意采集点被添加进来的顺序很重要。即y=a(x(1) * x(2)+x(3) * x(4)+...+x(i-1) * x(i)"
-   "RATIO", "相除：用于计算被添加到本模型测点的2个采集点的比率，注意采集点被添加进来的顺序很重要，即y=x(1)/x(2)"
-   "LOGICAL_OR", "对添加到本模型测点的采集点求逻辑或，y=(x(1)|x(2)|...|x(i))"
-   "RATIO_AGAINST_SUM", "对添加到本模型测点的三个采集点做如下运算：y=x(1)/(x(2)+x(3))"
-   "BIT_N", "将一个AI类型的采集点的指定比特取出，复制到一个新模型点上，包含一个参数“操作数”表示取出的是AI点的第几个比特位。例如，操作数为0表示取出的AI点的第1位，操作数为15则表示取出的AI点的第16位"
-   "BITS_M_TO_N", "取连续多位赋值公式，可将一个AI点的多个连续的比特取出赋值到一个新模型点上，包含2个参数：操作数M，高比特位；和操作数N，低比特位，M>N。例如，M=7,N=0，则指取出采集点第8到1位赋值到新模型点上去"
-   "IF_EQUAL", "包含3个操作数，记操作数1=a，操作数2=b，操作数3=c，则此公式的运算逻辑为：if x == a, then y== b, else y==c"
-   "MULTICHANNEL", "将多个采集点分别映射到一个数组类型模型点的各组元上。即y为数组：y={y[1], y[2], …, y[i]}, 且y[1]=x(1), y[2]=x(2), …, y[i]=x(i), i<=32"
-   "MULTIBIT", "y为int32数组，y={y[1],y[2]...,y[i]}，其中y[1].bit0=x(1).bit0, y[1].bit1=x(2).bit0, …, y[1].bit31=x(32).bit0,y[2].bit0=x(33).bit0,y[2].bit1=x(34).bit0,…,y[2].bit31=x(64).bit0,…,y[i].bit0=x(32(i-1)+1).bit0,y[i].bit1=x_(32(i-1)+2).bit0,…,y[i].bit31=x_(32(i-1)+32).bit0,i<=32"
+   "Formula Name", "Descriptions"
+   "NO_MAPPING", "Do not map this measuring point to any collection or control point"
+   "EQUAL", "The value of the measuring point is equal to the value of the collection or control point, i.e. y=x"
+   "SUM", "Sum up the value of all the collection points to be the measuring point y=x(1)+x(2)+...+x(i)"
+   "PRODUCT", "Multiply the value of all the collection points to be the measuring point. You can configure an optional coefficient. y=a * x(1) * x(2) * ... * x(i) *"
+   "CROSS_PRODUCT", "Calculate the inner product of all the collection points to be the measuring point. You can configure an optional coefficient (i.e. "Operand" parameter). Note that the order in which the collection points are collected is very important. y=a(x(1) * x(2)+x(3) * x(4)+...+x(i-1) * x(i)"
+   "RATIO", "Calculate the ratio of two collection points to be the measuring point. Note that the order in which the collection points are collected is very important. y=x(1)/x(2)"
+   "LOGICAL_OR", "Perform the logical OR calculation for the collection points to be the measuring point. y=(x(1)|x(2)|...|x(i))"
+   "RATIO_AGAINST_SUM", "Perform the following calculation for three collection points to be the measuring point. y=x(1)/(x(2)+x(3))"
+   "BIT_N", "Take a specified bit out of an AI collection point and copy the bit to a measuring point together with an operand parameter indicating the location of the bit. For example, an operand of 0 indicates that the AI collection point taken is located at the first bit, and an operand of 15 indicates that the AI collection point taken is located at the 16th bit."
+   "BITS_M_TO_N", "Consecutive multi-bit assignment formula, i.e. take multiple consecutive bits of an AI collection point and assign them to another measuring point together with 2 parameters: operand M (end bit) and operand N (start bit), M>N. For example, if M=7 and N=0, it means taking the 1st to the 8th bit of the collection point and assigning it to the new model point"
+   "IF_EQUAL", "Involve 3 operands. Operand 1 = a, operand 2 = b, operand 3 = c. The calculation is: if x == a, then y== b, else y==c"
+   "MULTICHANNEL", "Map multiple collection points respectively to each component of an array. That is, y is an array: y={y[1], y[2], …, y[i]}, and y[1]=x(1), y[2]=x(2), …, y[i]=x(i), i<=32"
+   "MULTIBIT", "y is an int32 array, and y={y[1],y[2]...,y[i]}, where: y[1].bit0=x(1).bit0, y[1].bit1=x(2).bit0, …, y[1].bit31=x(32).bit0,y[2].bit0=x(33).bit0,y[2].bit1=x(34).bit0,…,y[2].bit31=x(64).bit0,…,y[i].bit0=x(32(i-1)+1).bit0,y[i].bit1=x(32(i-1)+2).bit0,…,y[i].bit31=x(32(i-1)+32).bit0,i<=32"
 
-### 非array型模型测点适用公式
+### Formula Applicable To Non-array Measuring Points
 
-对于非array的模型属性，EnOS支持下列公式：
+For the attributes of non-array measuring points, EnOS supports the following formulas:
 
 - NO_MAPPING
 - INVALID
@@ -51,37 +49,37 @@ EnOS预置的公式列表如下。为了说明方便，在列表中，模型测�
 - BITS_M_TO_N
 - IF_EQUAL
 
-### array型模型测点适用公式
+### Formula Applicable To Array Measuring Points
 
 - NO_MAPPING
 - INVALID
 - MULTICHANNEL
 - MULTIBIT
 
-## 数据处理脚本
+## Data Processing Scripts
 
-Groovy语言的语法参见www.groovy-lang.org。但Groovy一些高级功能，如定义一个新类，在EnOS中被禁用。
+For the syntax of Groovy, see www.groovy-lang.org. Some advanced features of Groovy, such as defining a new class, are disabled in EnOS.
 
-为了能够使用Groovy脚本来完成设备数据的实时处理，EnOS提供了一些可以在脚本中使用的方法，用户可以使用这些方法完成模型点数据的读取、设置，以及设备属性的读取等。
+To use Groovy scripts to real-time process device data, EnOS provides some methods that can be used in scripts. Users can apply these methods to read and set measuring point data and read data from devices.
 
-下列一些最为常用的方法：
+Some of the most commonly used methods are given as follows:
 
 .. csv-table::
    
-   "方法", "说明"
-   "Number input(String domain-point-name)", "读取一个模型的值。以模型测点名为参数，且模型点名必须匹配在设备模型中的定义。返回值为int或float型，参照模型点在设备模型中的定义"
-   "void output(String domain-point-name, Number value)", "设置一个模型点的值（即为一个模型点产生一条数据）。模型点名必须匹配在设备模型中的定义。需要设置的值为int或float类型。在设置时，EnOS会将值转换为匹配模型点定义的值类型。"
-   "Boolean attrExists(String attribute-name)", "-	判断一个设备领域属性是否存在。以领域属性Key值为参数，且必须已经定义在设备模型中。"
-   "String attrString(String attribute-name)", "-	读取一个设备领域属性值作为字符串。以领域属性Key值为参数，且必须已经定义在设备模型中。"
+   "Methods", "Descriptions"
+   "Number input (String domain-point-name)", "Read a measuring point value. The measuring point name is taken as a parameter, and it must match the definition in the device model. The returned value is an integer or float based on the definitions of measuring points in the model"
+   "void output (String domain-point-name, Number value)", "Set the value of a measuring point so that 1 data entry is created for 1 measuring point. The measuring point name must match with the definition in the model. The value to be set is an integer or float. EnOS automatically converts the value into the type that matches with the measuring point definition."
+   "Boolean attrExists (String attribute-name)", "Used to determine whether an attribute exists or not. The attribute value is taken as a parameter, and it must have been defined in the model."
+   "String attrString(String attribute-name)", "Read an attribute value and convert it into a string. The attribute value is taken as a parameter, and it must have been defined in the device model."
 
-### 脚本示例
+### Script samples
 
-- 例如某厂家的电表，其电压值U=U(0)*10^(P-4)， U(0)和P都是采集到的原始值，需要经过此运算后才能得到最终的电压值U。可编写脚本如下：
+- An electric meter's voltage value U = U(0)*10^(P-4), where U(0) and P are the collection points, and U represents the final voltage value. The script sample is given as follows:
    ```groovy
    output("METER3X.UA", input("METER3X.UA_tmp") * (10 ** (input("METER3X.DPT") - 4)))
    ```
 
-- 某厂家有一台逆变器，每当逆变器上报特定错误码（28或38），EnOS为该逆变器INV.Fault模型测点产生一条值为1的数据；每当逆变器上报其他错误码的时候，EnOS为该逆变器INV.Fault模型测点产生一条值为0的数据。其脚本如下：
+- Whenever the inverter reports a specific error code (28 or 38), EnOS generates a data entry of value 1 for measuring point INV.Fault. Whenever the inverter reports other error codes, EnOS generates a data entry of value 0 for INV.Fault The script is given as follows:
   ```groovy
   if (input("INV.FaultCode")==28 || input("INV.FaultCode"=38)
   {
@@ -94,7 +92,7 @@ Groovy语言的语法参见www.groovy-lang.org。但Groovy一些高级功能，�
 
   ```
 
-- 某厂家领域属性`invType`设置为`STRING`的设备，每次接收到多路模型属性INV.BranchCurIn数据后，EnOS都会求取其离散率并乘以100，设置到INV.Disperse模型属性中，`invType`不满足条件的设备则不执行计算。脚本如下：
+- A device whose attribute `invType` is set to `STRING`. When the device receives the data of the multi-way attribute `INV.BranchCurIn`, EnOS calculates its dispersion rate and multiply it by 100 and set it to the `INV.Disperse`. No calculation will be performed for the device whose `invType` attribute does not meet appropriate conditions. The script is given as follows:
   ```groovy
   if (attrExists("invType")&&attrString("invType") == "STRING") {
     output("INV.Disperse", mcCoV("INV.BranchCurIn") * 100.0)
