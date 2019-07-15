@@ -3,6 +3,7 @@
 A sub-device communicates with EnOS Edge with a protocol. Edge uploads the specified collection point and control point information to EnOS according to *point.csv* in the protocol. EnOS then directly maps the raw data to measuring points defined in models or process the raw data with calculating scripts before mapping it to measuring points, as defined in the template.
 
 .. image:: ../media/edge_work_flow.png
+   :width: 400px
 
 ## Connecting with EnOS via Protocols
 
@@ -32,7 +33,7 @@ Based on the device protocol library, the Edge can quickly connect industrial de
    * - Centralized power station monitoring system
      - Third-party system
      - --
-   * - Substation comprehensive automation system 
+   * - Substation comprehensive automation system
      - Device
      - --
    * - Wind energy
@@ -69,7 +70,7 @@ In support of the data processing logic of applications in the cloud, Edge not o
 
 - The raw data time is saved as an attribute of a data entry and uploaded to the cloud.
 
-- Edge timestamps a data entry in coordinated universal time (UTC). 
+- Edge timestamps a data entry in coordinated universal time (UTC).
 
 - Edge converts earlier timestamps created with different protocols into a uniform format. If the earlier timestamp sent by a certain device is UTC+8, it can be converted to UTC+0.
 
