@@ -14,7 +14,7 @@ A connection refers to the TCP link established between the Edge and its sub-dev
 
 ## Template 
 
-The template determines how data collected by using a protocol is mapped into the model measuring points defined on EnOS Cloud. Its main function is to map the measuring points prescribed in the protocol (to be specific, the *point.csv* file of the protocol) to the measuring points defined in the device model. In addition, the template includes calculation formulas and scripts, so that data from selected devices will be processed with the formula or calculation script before mapping it to measuring points.
+The template determines how data collected by using a protocol is mapped into the model measuring points defined on EnOS Cloud. Its main function is to map the measuring points prescribed in the protocol (to be specific, the *point.csv* file of the protocol) to the measuring points defined in the device model. In addition, the template includes calculation formulas and scripts, so that data from selected devices will be processed with the formula or calculation script before being mapped to measuring points.
 
 ## Protocol
 

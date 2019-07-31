@@ -25,7 +25,9 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Get Started
+   :caption: Tutorial
+
+   tutorial/index
 
 .. toctree::
    :maxdepth: 2

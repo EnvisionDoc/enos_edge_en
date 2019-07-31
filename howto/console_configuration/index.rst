@@ -1,8 +1,5 @@
-Web Configuration
+Managing Edge from EnOS Console
 ====================================
-
-
-
 
 .. toctree::
    :maxdepth: 1
