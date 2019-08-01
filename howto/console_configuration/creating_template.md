@@ -47,7 +47,7 @@ This topic describes how to manage templates in the EnOS console.
 
 3. Open *point.csv*. Enter the measuring point information in the file.
 
-      .. csv-table::
+   .. csv-table::
 
       "Fields", "Descriptions"
       "Measuring Point Name", "The name of collection points from the device."
@@ -59,17 +59,16 @@ This topic describes how to manage templates in the EnOS console.
       "Alias", "The alias is an attribute of the measuring point. Its default value is the point number"
 
 
-  Different protocols support different types of measuring points. It is usually necessary to configure the following types of measuring points:
+   Different protocols support different types of measuring points. It is usually necessary to configure the following types of measuring points:
 
-  - byte
-  - short
-  - ushort
-  - int
-  - uint
-  - long
-  - float
-  - double
-
+   - byte
+   - short
+   - ushort
+   - int
+   - uint
+   - long
+   - float
+   - double
 
 4. Fill in all the required fields and save the file, then click **Upload**.
 
@@ -82,6 +81,7 @@ This topic describes how to manage templates in the EnOS console.
 After uploading *point.csv* , you need to map the device collection points and control points to the model measuring points.
 
 1. In **Operations** column of the selected template, click |edit| to enter **Edit Template** page.
+
    .. |edit| image:: ../../media/button_edit.png
 
 2. The list in **Points Mapping** displays all the measuring points as defined in the model

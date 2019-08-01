@@ -43,9 +43,3 @@
    reference/recommended_hardware
    reference/mapping_formula
 
-Downloads
-""""""""
-    pdf_ htmlzip_ epub_
-.. _pdf: https://www.envisioniot.com/projects/enos-edge/downloads/pdf/latest/
-.. _htmlzip: https://www.envisioniot.com/projects/enos-edge/downloads/htmlzip/latest/
-.. _epub: https://www.envisioniot.com/projects/enos-edge/downloads/epub/latest/

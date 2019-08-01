@@ -33,9 +33,9 @@ For protocols that have a version number with **_debug** suffix, you can release
 
 ## Upgrading protocols
 
-If all the versions of a current protocol are released, the user can add a new version to the protocol by upgrading the protocol. Select |upgrade| in the **Operations** column and enter the following information in the pop-up window:
+If all the versions of a current protocol are released, the user can add a new version to the protocol by upgrading the protocol. Select |update| in the **Operations** column and enter the following information in the pop-up window:
 
-.. |upgrade| image:: ../../media/button_upgrade.png
+.. |update| image:: ../../media/button_update.png
 
 .. list-table::
    :widths: auto
