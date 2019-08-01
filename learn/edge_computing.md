@@ -15,7 +15,6 @@ EnOS provides a set of formulas to process the collection and control points col
 
 The list of formulas in EnOS is given as follows. The model measuring points in the list are represented by y, while the collection  and control points are represented by x(i), where i represents the order in which the points are collected.
 
-<<<<<<< Updated upstream
 .. list-table::
 
    * - Formula Name
@@ -48,26 +47,6 @@ The list of formulas in EnOS is given as follows. The model measuring points in 
      - y is an int32 array, and y={y[1],y[2]...,y[i]}, where: y[1].bit0=x(1).bit0, y[1].bit1=x(2).bit0, …, y[1].bit31=x(32).bit0,y[2].bit0=x(33).bit0,y[2].bit1=x(34).bit0,…,y[2].bit31=x(64).bit0,…,y[i].bit0=x(32(i-1)+1).bit0,y[i].bit1=x(32(i-1)+2).bit0,…,y[i].bit31=x(32(i-1)+32).bit0,i<=32
 
      
-=======
-.. csv-table::
-
-   "Formula Name", "Descriptions"
-   "NO_MAPPING", "Do not map this measuring point to any collection or control point"
-   "EQUAL", "The value of the measuring point is equal to the value of the collection or control point, i.e. y=x"
-   "SUM", "Sum up the value of all the collection points to be the measuring point y=x(1)+x(2)+...+x(i)"
-   "PRODUCT", "Multiply the value of all the collection points to be the measuring point. You can configure an optional coefficient. y=a * x(1) * x(2) * ... * x(i) *"
-   "CROSS_PRODUCT", "Calculate the inner product of all the collection points to be the measuring point. You can configure an optional coefficient (i.e. "Operand" parameter). Note that the order in which the collection points are collected is very important. y=a(x(1) * x(2)+x(3) * x(4)+...+x(i-1) * x(i)"
-   "RATIO", "Calculate the ratio of two collection points to be the measuring point. Note that the order in which the collection points are collected is very important. y=x(1)/x(2)"
-   "LOGICAL_OR", "Perform the logical OR calculation for the collection points to be the measuring point. y=(x(1)|x(2)|...|x(i))"
-   "RATIO_AGAINST_SUM", "Perform the following calculation for three collection points to be the measuring point. y=x(1)/(x(2)+x(3))"
-   "BIT_N", "Take a specified bit out of an AI collection point and copy the bit to a measuring point together with an operand parameter indicating the location of the bit. For example, an operand of 0 indicates that the AI collection point taken is located at the first bit, and an operand of 15 indicates that the AI collection point taken is located at the 16th bit."
-   "BITS_M_TO_N", "Consecutive multi-bit assignment formula, i.e. take multiple consecutive bits of an AI collection point and assign them to another measuring point together with 2 parameters: operand M (end bit) and operand N (start bit), M>N. For example, if M=7 and N=0, it means taking the 1st to the 8th bit of the collection point and assigning it to the new model point"
-   "IF_EQUAL", "Involve 3 operands. Operand 1 = a, operand 2 = b, operand 3 = c. The calculation is: if x == a, then y== b, else y==c"
-   "MULTICHANNEL", "Map multiple collection points respectively to each component of an array. That is, y is an array: y={y[1], y[2], …, y[i]}, and y[1]=x(1), y[2]=x(2), …, y[i]=x(i), i<=32"
-   "MULTIBIT", "y is an int32 array, and y={y[1],y[2]...,y[i]}, where: y[1].bit0=x(1).bit0, y[1].bit1=x(2).bit0, …, y[1].bit31=x(32).bit0,y[2].bit0=x(33).bit0,y[2].bit1=x(34).bit0,…,y[2].bit31=x(64).bit0,…,y[i].bit0=x(32(i-1)+1).bit0,y[i].bit1=x(32(i-1)+2).bit0,…,y[i].bit31=x(32(i-1)+32).bit0,i<=32"
-
-<!--end-->
->>>>>>> Stashed changes
 
 ### Formula Applicable To Non-array Measuring Points
 
