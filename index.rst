@@ -27,7 +27,7 @@
    :maxdepth: 2
    :caption: Tutorial
 
-   tutorial/index
+   tutorial/connecting_edge
 
 .. toctree::
    :maxdepth: 2
@@ -42,4 +42,7 @@
    reference/protocol_list
    reference/recommended_hardware
    reference/mapping_formula
+<<<<<<< index.rst
+=======
 
+>>>>>>> index.rst

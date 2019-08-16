@@ -186,28 +186,28 @@ The device template determines how data collected from a device by using a proto
 
    .. |edit| image:: ../media/button_edit.png
 
-4. In the **Edit Template** pop-up, click |download|. Click |download2| to download `point.csv` of "IEC104-Client-linux v3.0_debug" as this is the protocol we are going to use for this tutorial.
+4. In the **Edit Template** pop-up, click |download|. Click |download2| to download `point.xlsx` of "IEC104-Client-linux v3.0_debug" as this is the protocol we are going to use for this tutorial.
 
    .. |download| image:: ../media/button_download_template.png
    .. |download2| image:: ../media/button_download.png
 
-5. Open `point.csv` you just downloaded with a text editor. We strongly recommend you use Notepad++ to avoid any garbled code.
+5. Open `point.xlsx` you just downloaded.
 
-   `point.csv` contains the attributes of collection and control points to be reported to Edge. Since we have defined 4 measuring points for the device models in **Step 1**, we need to create 4 collection points so that they can be mapped to the 4 measuring points later.
+   `point.xlsx` contains the attributes of collection and control points to be reported to Edge. Since we have defined 4 measuring points for the device models in **Step 1**, we need to create 4 collection points so that they can be mapped to the 4 measuring points later.
 
-   Originally, `point.csv` looks like the following, the Chinese characters seperated by commas on the first line means measuring point, point number, value type, point type, coefficient, base value, and alias, from left to right:
+   Originally, `point.xlsx` looks like the following, the Chinese characters from left to right on the first row mean measuring point, point number, value type, point type, coefficient, base value, and alias:
 
    .. image:: ../media/tutorial_point_csv_original.png
 
-   Let's edit `point.csv` so that it looks like this:
+   Let's edit `point.xlsx` so that it looks like this:
 
    .. image:: ../media/tutorial_point_csv_edited.png
 
    As you can see, we changed the measuring point, value type, and point type to match the "Identifier", "Data Type", and "Point Type" defined in the model in **Step 1**. As for point numbers, they can be in any order as long as they are positive integers. The other attributes remain unchanged.
 
-6. Save and close `point.csv`.
+6. Save and close `point.xlsx`.
 
-7. Go back to **EnOS Edge > Template > Edit Template**. Click |upload| to upload *point.csv* you just edited.
+7. Go back to **EnOS Edge > Template > Edit Template**. Click |upload| to upload *point.xlsx* you just edited.
 
    .. |upload| image:: ../media/button_upload.png
 
@@ -217,7 +217,7 @@ The device template determines how data collected from a device by using a proto
 
 9. In the pop-up, select the collection point in **Collect** tab whose description matches the measuring point's identifier and click **Confirm**.
 
-   By doing this, you map the measuring points defined in our model to the collection points defined in *point.csv*.
+   By doing this, you map the measuring points defined in our model to the collection points defined in *point.xlsx*.
 
    .. image:: ../media/tutorial_point_mapping.png
 
