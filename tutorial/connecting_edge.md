@@ -203,7 +203,9 @@ The device template determines how data collected from a device by using a proto
 
    .. image:: ../media/tutorial_point_csv_edited.png
 
-   As you can see, we changed the measuring point, value type, and point type to match the "Identifier", "Data Type", and "Point Type" defined in the model in **Step 1**. As for point numbers, they can be in any order as long as they are positive integers. The other attributes remain unchanged.
+   As you can see, we changed the measuring point, value type, and point type to match the "Identifier", "Data Type", and "Point Type" defined in the model in **Step 1**. 
+   
+   .. note:: As for point numbers, they must be continuous positive integers and follow the order in which the collection points are sent to EnOS as prescribed in the channel table.
 
 6. Save and close `point.xlsx`.
 

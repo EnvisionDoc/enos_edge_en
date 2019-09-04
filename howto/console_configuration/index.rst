@@ -8,4 +8,6 @@ Managing Edge from EnOS Console
    creating_template
    creating_protocol
    managing_protocol
+   adding_app
+   managing_app
 

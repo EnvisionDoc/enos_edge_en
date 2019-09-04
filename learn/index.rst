@@ -19,4 +19,5 @@ platform.
    capacity
    typical_deployment_model
    edge_security
+   capability_comparison
    
