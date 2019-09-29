@@ -8,6 +8,9 @@ In the **EnOS Edge > Template** section, click **edit** . Then you can use the f
 
 - Point mapping: maps collection points and control points to measuring points defined in the model after processing them using formula. Or directly maps these points to measuring points.
 - Script: processes the collection points and control points by using calculation script.
+
+In the **EnOS Edge > Edge Management >Edge Details** , you can use the following edge computing functions:
+
 - Stream analytics: orchestrates StreamSets operators to create stream analytics pipeline. Satisfies complicated computing requirements in various scenarios.
 
 ## Point mapping
@@ -117,23 +120,41 @@ Some of the most commonly used methods are given as follows:
 
   ```
 
+
+<!--
 ## StreamSets Operator Reference
 
-EnOS™ Edge supports StreamSets-based stream analytics capability. The operators that EnOS Edge supports include the following:
+EnOS Stream Analytics provides a set of underlying packaged StreamSets operators, supporting asset main data query, window aggregation, data filtering and interpolation, and electric energy calculation. Data engineers and application developers can use these StreamSets operators to design customized stream data processing jobs to meet the requirements of complex business scenarios.
 
-- [TSL Asset Lookup](/docs/data-asset/zh_CN/dev/reference/streamsets/tsl_asset_lookup)
-- [TSL Child Asset Lookup](/docs/data-asset/zh_CN/dev/reference/streamsets/tsl_child_asset_lookup)
-- [TSL Parent Asset Lookup](http://www.envisioniot.com/docs/data-asset/zh_CN/dev/reference/streamsets/tsl_parent_asset_lookup.html)
-- [TSL Point Lookup](/docs/data-asset/zh_CN/dev/reference/streamsets/tsl_point_lookup)
-- [Site Lookup](/docs/data-asset/zh_CN/dev/reference/streamsets/site_lookup)
-- [Point Selector](/docs/data-asset/zh_CN/dev/reference/streamsets/point_selector)
-- [Time Sort](/docs/data-asset/zh_CN/dev/reference/streamsets/time_sort)
-- [Window Aggregator](/docs/data-asset/zh_CN/dev/reference/streamsets/window_aggregator)
-- [Fixed Batch Pivotor](/docs/data-asset/zh_CN/dev/reference/streamsets/fixed_batch_pivotor)
-- [Earliest Change Record Appender](/docs/data-asset/zh_CN/dev/reference/streamsets/earliest_change_record_appender)
-- [State Capturer](/docs/data-asset/zh_CN/dev/reference/streamsets/state_capturer)
-- [HTTP Lookup](/docs/data-asset/zh_CN/dev/reference/streamsets/http_lookup)
-- [Late Point Filter](/docs/data-asset/zh_CN/dev/reference/streamsets/late_point_filter)
-- [MinMax Ouliter](/docs/data-asset/zh_CN/dev/reference/streamsets/min_max_outlier)
-- [Last Record Appender](/docs/data-asset/zh_CN/dev/reference/streamsets/last_record_appender)
-- [Delta Calculator](/docs/data-asset/zh_CN/dev/reference/streamsets/delta_calculator)
+### Asset Data Querying Operatos
+
+- [TSL Asset Lookup](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/tsl_asset_lookup)
+- [TSL Child Asset Lookup](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/tsl_child_asset_lookup)
+- [TSL Parent Asset Lookup](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/tsl_parent_asset_lookup.html)
+- [TSL Point Lookup](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/tsl_point_lookup)
+- [Site Lookup](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/site_lookup)
+
+### Data Processing Operators
+
+- [Point Selector](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/point_selector)
+- [Time Sort](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/time_sort)
+- [Window Aggregator](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/window_aggregator)
+- [Fixed Batch Pivotor](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/fixed_batch_pivotor)
+- [Earliest Change Record Appender](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/earliest_change_record_appender)
+- [State Capturer](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/state_capturer)
+
+### Advanced Data Processors
+
+- [HTTP Lookup](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/http_lookup)
+
+### Data Quality Tagging Operators
+
+- [Late Point Filter](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/late_point_filter)
+- [MinMax Ouliter](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/min_max_outlier)
+
+### Electric Energy Calculating Operators
+
+- [Last Record Appender](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/last_record_appender)
+- [Delta Calculator](/docs/data-asset/zh_CN/2.0.9/reference/streamsets/delta_calculator)
+
+-->

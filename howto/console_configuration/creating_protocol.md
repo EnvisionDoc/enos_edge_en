@@ -16,28 +16,19 @@ This topic describes how to create protocols on EnOS console.
 
 2. In the protocol creation window, fill in the following information: 
 
-   .. list-table::
-      :widths: auto
+ .. csv-table:: Protocol Fields
+    :header: "Parameter", "Parameter Description"
 
-      * - Parameter
-         - Parameter description
-      * - Protocol type
-         - Select from the protocols pre-defined by EnOS
-      * - Roles
-         - Select whether Edge acts as a server or client in its communication with sub-devices
-      * - Name
-         - Identifier for the protocol
-      * - Package
-         - bin file of protocol program
-      * - Description
-         - /
-      * - Protocol document
-         - /
-      * - System Configuration
-         - Upload protocol.sys that contains communication configuration for this protocol
-      * - Point
-         - Point.csv of this protocol
-<!--end-->
+    "Protocol type", "Select from the protocols pre-defined by EnOS"
+    "Roles", "Select whether Edge acts as a server or client in its communication with sub-devices"
+    "Name", "Identifier for the protocol"
+    "Package", "binary file of protocol program"
+    "Description", ""
+    "Protocol document", ""
+    "System Configuration", "Upload protocol.sys that contains communication configuration for this protocol"
+    "Point", "Point.csv of this protocol"
+
+ <!--End-->
 
    .. image:: ../../media/edge_protocol_create.png
 
@@ -68,7 +59,7 @@ v*Main Version No.*.*Revision No.*_*State suffix*
 
 ## Next step
 
-Users can manage the protocols. See [Managing Protocols](managing_protocols).
+Users can manage the protocols. See [Managing Protocols](managing_protocol).
 
 
 

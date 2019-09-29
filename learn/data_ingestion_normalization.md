@@ -3,11 +3,11 @@
 A sub-device communicates with EnOS Edge with a protocol. Edge uploads the specified collection point and control point information to EnOS according to *point.csv* in the protocol. EnOS then directly maps the raw data to measuring points defined in models or process the raw data with calculating scripts before mapping it to measuring points, as defined in the template.
 
 .. image:: ../media/edge_work_flow.png
-   :width: 400px
+   :width: 600px
 
 ## Connecting with EnOS via Protocols
 
-The data collection capability of Edge is based on a variety of communication protocols. The protocol library of EnOS™ Edge includes not only a large number of industry standard communication protocols but also various proprietary communication protocols. For a list of protocols supported by EnOS, see [ List of Supported Protocols](../reference/protocol_list).
+The data collection capability of Edge is based on a variety of communication protocols. The protocol library of EnOS™ Edge includes not only a large number of industry standard communication protocols but also various proprietary communication protocols. For a list of protocols supported by EnOS, see [List of Supported Protocols](../reference/protocol_list).
 
 ## Data Collection
 
@@ -80,10 +80,11 @@ In addition to data collection, another core function of Edge is to model the co
 
 .. image:: ../media/edge_data_processing_flow.png
    :alt: Figure: Data Processing in the Edge
+   :widht: 450px
 
 Users can use the following methods to map data to measuring points defined in a model:
 - One-one mapping: The value of a collection point is mapped to a measuring point of a model without any processing.
-- Formula mapping: process a collection point with a formula and then map it to a measuring point. EnOS has  a set of formulas pre-defined for users. For more information, see [Formula Mapping](../reference/edge_computing)
+- Formula mapping: process a collection point with a formula and then map it to a measuring point. EnOS has  a set of formulas pre-defined for users. For more information, see [Formula Mapping](edge_computing)
 - Script mapping: Users can create a script to process a collection point and then map it to a measuring point.
 
 You can only use one-one mapping for a control point.

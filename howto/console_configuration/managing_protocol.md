@@ -8,7 +8,7 @@ This topic describes how to edit, release, upgrade and delete protocols.
 
 ## Before You Start
 
-Obtain permissions to manage protocols. For more information, see [Policies, roles, and permissions](/docs/iam/en/latest/access_policy).
+Obtain permissions to manage protocols. For more information, see [Policies, roles, and permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Editing protocols
 
