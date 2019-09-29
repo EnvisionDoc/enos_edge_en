@@ -4,8 +4,8 @@ To use the Edge as a gateway to collect data and perform other functions, you ne
 
 ## Before You Start
 
-- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
-- Create the Edge model, product and devices. See [Device Management](/docs/device-connection/en/latest/device_management_overview). Note that the name of the Edge model must be **EnOS_Edge_Standard_Model** and the name of the Edge product must be **EnOS_Edge_Standard_Product**.
+- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
+- Create the Edge model, product and devices. See [Device Management](/docs/device-connection/en/2.0.9/device_management_overview). Note that the name of the Edge model must be **EnOS_Edge_Standard_Model** and the name of the Edge product must be **EnOS_Edge_Standard_Product**.
 
 ## Creating Edges
 

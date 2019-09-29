@@ -12,7 +12,7 @@ This topic introduces how to manage an app deployed on an Edge instance, includi
 
 ## Before You Start
 
-- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 - Add an app to an Edge instance and launch the app online. See [Adding and Lauching an Application on Edge](adding_app).
 
 ## Managing App Details
@@ -29,7 +29,7 @@ This topic introduces how to manage an app deployed on an Edge instance, includi
 
 3. Manage the basic information, permission, menu, approval, and customer as required.
 
- For detailed operations, see [Managing Apps](/docs/app-development/zh_CN/dev/managing_apps).
+ For detailed operations, see [Managing Apps](/docs/app-development/en/2.0.9/managing_apps).
 
 ## Making an App Go Offline and Removing the App
 

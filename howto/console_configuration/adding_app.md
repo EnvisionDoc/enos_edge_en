@@ -8,8 +8,8 @@ This topic introduces how to add an app to EnOS Edge and launch the app online.
 
 ## Before You Begin
 
-- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
-- Register an app on EnOS Cloud. For more information, see [Managing Application](/docs/app-development/en/latest/managing_apps).
+- Obtain the access to Edge management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
+- Register an app on EnOS Cloud. For more information, see [Managing Application](/docs/app-development/en/2.0.9/managing_apps).
 
 ## Procedure
 

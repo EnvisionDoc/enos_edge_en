@@ -13,7 +13,7 @@ This topic describes how to manage templates in the EnOS console.
 
 ## Before You Start
 
-- Obtain the access to template management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/latest/access_policy).
+- Obtain the access to template management. If you don't have the access, contact your OU administrator. For more information, see [Policies, Roles and Permissions](/docs/iam/en/2.0.9/access_policy).
 
 ## Creating a Template Online
 
@@ -93,7 +93,7 @@ After uploading *point.csv* , you need to map the device collection points and c
    .. |edit| image:: ../../media/button_edit.png
    .. image:: ../../media/edge_template_collection_points.png
 
-4. To map collection point, on **Collect** tab, Select one-to-one mapping or formula mapping. For more information, see [Mapping](../../learn/edge_conputing). 
+4. To map collection point, on **Collect** tab, Select one-to-one mapping or formula mapping. For more information, see [Edge Computing](../../learn/edge_computing). 
    For one-to-one mapping, just select the collection point or control point you want this measuring point to map to. 
 
    For formula mapping, click **Add Formula**. Then select the formula and parameters for the calculation in the pop-up.
@@ -118,7 +118,7 @@ Select **Create** under **Script** and edit the script online in the pop-up.
 
 You can also select **Export** to download the script template and edit it offline, and then select **Import** to upload edited script.
 
-For scripting specifications, see [Edge Computing](../../learn/edge_specification/edge_computing)
+For scripting specifications, see [Edge Computing](../../learn/edge_computing)
 
 Click **OK** to complete the script.
 

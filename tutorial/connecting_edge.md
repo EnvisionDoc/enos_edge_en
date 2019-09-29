@@ -16,7 +16,7 @@ The scenario of this turoial is
 
 ## Step 1: Defining Models
 
-A model is the abstraction of the features of an object connected to EnOS. It defines the features of a device, including attributes, measuring points, services, and events. For more information about models, see [Thing Model](/docs/device-connection/en/latest/howto/model/model_overview).
+A model is the abstraction of the features of an object connected to EnOS. It defines the features of a device, including attributes, measuring points, services, and events. For more information about models, see [Thing Model](/docs/device-connection/en/2.0.9/howto/model/model_overview).
 
 The model of EnOS Edge has been provided as a public model of EnOS. Go to **Public** tab in **Model** and search for *EnOS_Edge_Standard_Model*. You can view its basic information and feature definitions in by clicking **View** .
 
@@ -107,7 +107,7 @@ In this step we need to create devices on EnOS for the Edge and its sub-devices.
 
       "Product", "EnOS_Edge_Standard_Product"
       "Device Key", "Leave it blank"
-      "Device Name", "Edge 01"
+      "Device Name", "Edge01"
       "Time Zone/City", "UTC+08:00"
       "edge_type", "0: EdgeGateway"
 
